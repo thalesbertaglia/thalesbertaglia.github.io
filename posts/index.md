@@ -1,5 +1,5 @@
 ---
 layout: post-list
 title: Todos os Posts
-excerpt: "A Lista de Posts"
+excerpt: "Lista de Posts"
 ---
