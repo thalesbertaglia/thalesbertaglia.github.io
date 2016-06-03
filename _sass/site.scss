@@ -193,7 +193,7 @@ header .entry-meta {
     text-align: right;
 }
 .feature {
-    @include transition(.5s);
+    @include transition(.0s);
     @media #{$small} {
         background-image: none !important;
     }
