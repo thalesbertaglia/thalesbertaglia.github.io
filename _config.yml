@@ -59,7 +59,7 @@ github:             tfcbertaglia
 #keybase:           username
 #xmpp:              username@server.com
 #hackernews:        username
-lattes
+lattes: 			true
 
 # Gems
 gems:
