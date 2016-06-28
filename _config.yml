@@ -1,7 +1,7 @@
 # Site
 title:              Thales Bertaglia
-bio:                'Minimal, one column jekyll theme.'
-description:        "Moon is a minimal, one column jekyll theme for your blog."
+bio:                'Mestrando em Ciências de Computação e Matemática Computacional no ICMC-USP na área de Processamento de Linguagem Natural.'
+#description:        "Moon is a minimal, one column jekyll theme for your blog."
 reading_time:       true
 words_per_minute:   200
 logo:               'assets/img/avatar.jpg'
