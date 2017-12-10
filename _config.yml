@@ -23,8 +23,8 @@ github: tfcbertaglia # username
 linkedin: thales-bertaglia-b5926614b
 #stackoverflow: username   #e.g: users/2735833/proton1h1
 #Comment out if you don't want disqus
-#disqus: username
-google_analytics: UA-69391421-1
+disqus: thalesbertaglia-com
+google_analytics: UA-110962150-1
 
 
 # needed for travis-ci build
