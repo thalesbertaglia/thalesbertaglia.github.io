@@ -43,6 +43,8 @@ comments: true
 			</div>
 		</div>
 	</div>
-	{% include disqus.html %}
+{% if site.disqus %}
+  {% include disqus_comments.html %}
+{% endif %}
 	{% include analytics.html %}
 </div>
