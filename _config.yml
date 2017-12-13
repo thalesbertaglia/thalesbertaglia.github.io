@@ -29,4 +29,3 @@ google_analytics: UA-110962150-1
 
 # needed for travis-ci build
 exclude: [vendor]
-include: [_blog]
