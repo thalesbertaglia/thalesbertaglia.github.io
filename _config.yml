@@ -5,7 +5,9 @@ rdiscount:
   extensions: [smart]
 permalink: /:title.html
 paginate: 5
-gems: [jekyll-paginate]
+plugins:
+  - jekyll-paginate
+  - jekyll-seo-tag
 port: 3000
 safe: true
 
@@ -25,7 +27,6 @@ linkedin: thales-bertaglia-b5926614b
 #Comment out if you don't want disqus
 disqus: thalesbertaglia-com
 google_analytics: UA-110962150-1
-
 
 # needed for travis-ci build
 exclude: [vendor]
