@@ -3,4 +3,4 @@ title = "Projects"
 menu = "main"
 +++
 
-# Projects
+# projects
