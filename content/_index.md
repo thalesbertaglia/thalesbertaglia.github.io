@@ -12,8 +12,6 @@ What happens when you combine the worlds' fastest, most lightweight static site 
 
 **Use this theme, and find out!**
 
-Made with 💟 by [Jan Raasch](https://www.janraasch.com).
-
 ---
 
 Simply publish content online, grow an audience, and keep your pages tiny, fast, and **optimized for search engines**.
