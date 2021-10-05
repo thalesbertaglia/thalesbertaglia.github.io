@@ -4,7 +4,7 @@ menu = "main"
 +++
 
 # projects
-*For code, check out my [Github page](https://github.com/thalesbertaglia)*
+*For code, check out my [GitHub page](https://github.com/thalesbertaglia)*
 
 [Business Model Prevalence in Influencer Marketing on Instagram](https://computationalsocialmedia.tech/index.php/projects/instagram): This research project brings together expertise from Natural Language Processing (NLP) and
 European Consumer Law and aims to make a gap-filling contribution focused on determining which
