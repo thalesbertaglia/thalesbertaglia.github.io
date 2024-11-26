@@ -1,8 +1,8 @@
 ---
 layout: post
-date: 2024-10-08
+date: 2024-07-11
 inline: true
 related_posts: false
 ---
 
-I am defending my PhD on the 7th of November at 16h! I will share the YouTube link for the livestream once it is available.
+I defended my PhD on the 7th of November! You can watch the defence [here](https://www.youtube.com/watch?v=09nasLn6jFM) and read my thesis [here](https://cris.maastrichtuniversity.nl/en/publications/decoding-digital-influence-computational-insights-into-monetisati).
