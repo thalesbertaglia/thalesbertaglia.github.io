@@ -7,6 +7,13 @@ nav: true
 nav_order: 6
 ---
 
+# 2025
+
+**Introduction to Machine Learning**<br>
+Faculty of Law, Economics and Governance<br>
+Utrecht University<br>
+<br>
+
 # 2024
 
 **Data, Algorithms and Digital Governance**<br>
