@@ -1,3 +1,40 @@
+@misc{zhang2026lingolinguisticgraphoptimization,
+      title={LinGO: A Linguistic Graph Optimization Framework with LLMs for Interpreting Intents of Online Uncivil Discourse}, 
+      author={Yuan Zhang and Thales Bertaglia},
+      year={2026},
+      eprint={2602.04693},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2602.04693}, 
+      abstract={Detecting uncivil language is crucial for maintaining safe, inclusive, and democratic online spaces. Yet existing classifiers often misinterpret posts containing uncivil cues but expressing civil intents, leading to inflated estimates of harmful incivility online. We introduce LinGO, a linguistic graph optimization framework for large language models (LLMs) that leverages linguistic structures and optimization techniques to classify multi-class intents of incivility that use various direct and indirect expressions. LinGO decomposes language into multi-step linguistic components, identifies targeted steps that cause the most errors, and iteratively optimizes prompt and/or example components for targeted steps. We evaluate it using a dataset collected during the 2022 Brazilian presidential election, encompassing four forms of political incivility: Impoliteness (IMP), Hate Speech and Stereotyping (HSST), Physical Harm and Violent Political Rhetoric (PHAVPR), and Threats to Democratic Institutions and Values (THREAT). Each instance is annotated with six types of civil/uncivil intent. We benchmark LinGO using three cost-efficient LLMs: GPT-5-mini, Gemini 2.5 Flash-Lite, and Claude 3 Haiku, and four optimization techniques: TextGrad, AdalFlow, DSPy, and Retrieval-Augmented Generation (RAG). The results show that, across all models, LinGO consistently improves accuracy and weighted F1 compared with zero-shot, chain-of-thought, direct optimization, and fine-tuning baselines. RAG is the strongest optimization technique and, when paired with Gemini model, achieves the best overall performance. These findings demonstrate that incorporating multi-step linguistic components into LLM instructions and optimize targeted components can help the models explain complex semantic meanings, which can be extended to other complex semantic explanation tasks in the future.},
+      pdf={https://arxiv.org/pdf/2602.04693},
+      bibtex_show={true},
+      preview={lingo.png},
+}
+
+@article{goanta2025great,
+  title={The great data standoff: Researchers vs. platforms under the digital services act},
+  author={Goanta, Catalina and Zannettou, Savvas and Kaushal, Rishabh and van de Kerkhof, Jacob and Bertaglia, Thales and Annabell, Taylor and Gui, Haoyang and Spanakis, Gerasimos and Iamnitchi, Adriana},
+  journal={arXiv preprint arXiv:2505.01122},
+  year={2025},
+  abstract={To facilitate accountability and transparency, the Digital Services Act (DSA) sets up a process through which Very Large Online Platforms (VLOPs) need to grant vetted researchers access to their internal data (Article 40(4)). Operationalising such access is challenging for at least two reasons. First, data access is only available for research on systemic risks affecting European citizens, a concept with high levels of legal uncertainty. Second, data access suffers from an inherent standoff problem. Researchers need to request specific data but are not in a position to know all internal data processed by VLOPs, who, in turn, expect data specificity for potential access. In light of these limitations, data access under the DSA remains a mystery. To contribute to the discussion of how Article 40 can be interpreted and applied, we provide a concrete illustration of what data access can look like in a real-world systemic risk case study. We focus on the 2024 Romanian presidential election interference incident, the first event of its kind to trigger systemic risk investigations by the European Commission. During the elections, one candidate is said to have benefited from TikTok algorithmic amplification through a complex dis- and misinformation campaign. By analysing this incident, we can comprehend election-related systemic risk to explore practical research tasks and compare necessary data with available TikTok data. In particular, we make two contributions: (i) we combine insights from law, computer science and platform governance to shed light on the complexities of studying systemic risks in the context of election interference, focusing on two relevant factors: platform manipulation and hidden advertising; and (ii) we provide practical insights into various categories of available data for the study of TikTok, based on platform documentation, data donations and the Research API.},
+  pdf={https://arxiv.org/pdf/2505.01122},
+  bibtex_show={true},
+  preview={dsa_data_access.png},
+}
+
+@inproceedings{gui2025evaluating,
+  title={Evaluating LLM-Generated Legal Explanations for Regulatory Compliance in Social Media Influencer Marketing},
+  author={Gui, Haoyang and Bertaglia, Thales and Annabell, Taylor and Goanț{\u{a}}, C{\u{a}}t{\u{a}}lina and Dooper, Tjomme and Spanakis, Gerasimos},
+  booktitle={Proceedings of the Natural Legal Language Processing Workshop 2025},
+  pages={157--171},
+  year={2025},
+  pdf={https://aclanthology.org/2025.nllp-1.12/},
+  bibtex_show={true},
+  abstract={The rise of influencer marketing has blurred boundaries between organic content and sponsored content, making the enforcement of legal rules relating to transparency challenging. Effective regulation requires applying legal knowledge with a clear purpose and reason, yet current detection methods of undisclosed sponsored content generally lack legal grounding or operate as opaque “black boxes.” Using 1,143 Instagram posts, we compare gpt-5-nano and gemini-2.5-flash-lite under three prompting strategies with controlled levels of legal knowledge provided. Both models perform strongly in classifying content as sponsored or not (F1 up to 0.93), with Gemini favouring recall (0.93) and GPT favouring precision (0.95), though performance drops by over 10 points on ambiguous cases. We further develop a taxonomy of reasoning errors, showing frequent citation omissions (28.57%), unclear references (20.71%), and hidden ads exhibiting the highest miscue rate (28.57%). While adding regulatory text to the prompt improves explanation quality, it does not consistently improve detection accuracy. The contribution of this paper is threefold. First, it makes a novel addition to regulatory compliance technology by providing a taxonomy of common errors in LLM-generated legal reasoning to evaluate whether automated moderation is not only accurate but also legally robust, thereby advancing the transparent detection of influencer marketing content. Second, it features an original dataset of LLM explanations annotated by two students who were trained in influencer marketing law. Third, it combines quantitative and qualitative evaluation strategies for LLM explanations and critically reflects on how these findings can support advertising regulatory bodies in automating moderation processes on a solid legal foundation.},
+  preview={nllp25.png},
+}
+
 @inproceedings{bauer2025towards,
   title={Towards Fairness Assessment of Dutch Hate Speech Detection},
   author={Bauer, Julie and Kaushal, Rishabh and Bertaglia, Thales and Iamnitchi, Adriana},
@@ -9,6 +46,25 @@
   abstract={Numerous studies have proposed computational methods to detect hate speech online, yet most focus on the English language and emphasize model development. In this study, we evaluate the counterfactual fairness of hate speech detection models in the Dutch language, specifically examining the performance and fairness of transformer-based models. We make the following key contributions. First, we curate a list of Dutch Social Group Terms that reflect social context. Second, we generate counterfactual data for Dutch hate speech using LLMs and established strategies like Manual Group Substitution (MGS) and Sentence Log-Likelihood (SLL). Through qualitative evaluation, we highlight the challenges of generating realistic counterfactuals, particularly with Dutch grammar and contextual coherence. Third, we fine-tune baseline transformer-based models with counterfactual data and evaluate their performance in detecting hate speech. Fourth, we assess the fairness of these models using Counterfactual Token Fairness (CTF) and group fairness metrics, including equality of odds and demographic parity. Our analysis shows that models perform better in terms of hate speech detection, average counterfactual fairness and group fairness. This work addresses a significant gap in the literature on counterfactual fairness for hate speech detection in Dutch and provides practical insights and recommendations for improving both model performance and fairness.}
 }
 
+@article{tari2025towards,
+author = {Tari, Henry and \v{S}ereiva, Nojus and Kaushal, Rishabh and Bertaglia, Thales and Iamnitchi, Adriana},
+title = {Towards High-Fidelity Synthetic Multi-Platform Social Media Datasets via Large Language Models},
+year = {2026},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+issn = {1559-1131},
+url = {https://doi.org/10.1145/3789496},
+doi = {10.1145/3789496},
+abstract = {Social media datasets are essential for research on a variety of topics, such as disinformation, influence operations, hate speech detection, or influencer marketing practices. However, access to social media datasets is often constrained due to costs and platform restrictions. Acquiring datasets that span multiple platforms, which is crucial for understanding the digital ecosystem, is particularly challenging. This paper explores the potential of large language models to create lexically and semantically relevant social media datasets across multiple platforms, aiming to match the quality of real data. We propose multi-platform topic-based prompting and employ various language models to generate synthetic data from two real datasets, each consisting of posts from three different social media platforms. We assess the lexical and semantic properties of the synthetic data and compare them with those of the real data. Our empirical findings show that using large language models to generate synthetic multi-platform social media data is promising, different language models perform differently in terms of fidelity, and a post-processing approach might be needed for generating high-fidelity synthetic datasets for research. In addition to the empirical evaluation of three state of the art large language models, our contributions include new fidelity metrics specific to multi-platform social media datasets.},
+note = {Just Accepted},
+journal = {ACM Trans. Web},
+month = jan,
+keywords = {Social Media Research, LLMs, Synthetic Data},
+pdf={https://dl.acm.org/doi/abs/10.1145/3789496},
+bibtex_show={true},
+preview={towards_synthetic_data.png},
+}
+
 @inproceedings{annabell2025tiktok,
   title={TikTok Search Recommendations: Governance and Research Challenges},
   author={Annabell, Taylor and Gorwa, Robert and Scharlach, Rebecca and van de Kerkhof, Jacob and Bertaglia, Thales},
@@ -18,6 +74,17 @@
   preview={compass25.png},
   bibtex_show={true},
   abstract={Like other social media, TikTok is embracing its use as a search engine, developing search products to steer users to produce searchable content and engage in content discovery. Their recently developed product search recommendations are preformulated search queries recommended to users on videos. However, TikTok provides limited transparency about how search recommendations are generated and moderated, despite requirements under regulatory frameworks like the European Union's Digital Services Act. By suggesting that the platform simply aggregates comments and common searches linked to videos, it sidesteps responsibility and issues that arise from contextually problematic recommendations, reigniting long-standing concerns about platform liability and moderation. This position paper addresses the novelty of search recommendations on TikTok by highlighting the challenges that this feature poses for platform governance and offering a computational research agenda, drawing on preliminary qualitative analysis. It sets out the need for transparency in platform documentation, data access and research to study search recommendations.}
+}
+
+@article{gui2025computational,
+  title={Computational studies in influencer marketing: A systematic literature review},
+  author={Gui, Haoyang and Bertaglia, Thales and Goanta, Catalina and Spanakis, Gerasimos},
+  journal={arXiv preprint arXiv:2506.14602},
+  year={2025},
+  abstract={Influencer marketing has become a crucial feature of digital marketing strategies. Despite its rapid growth and algorithmic relevance, the field of computational studies in influencer marketing remains fragmented, especially with limited systematic reviews covering the computational methodologies employed. This makes overarching scientific measurements in the influencer economy very scarce, to the detriment of interested stakeholders outside of platforms themselves, such as regulators, but also researchers from other fields. This paper aims to provide an overview of the state of the art of computational studies in influencer marketing by conducting a systematic literature review (SLR) based on the PRISMA model. The paper analyses 69 studies to identify key research themes, methodologies, and future directions in this research field. The review identifies four major research themes: Influencer identification and characterisation, Advertising strategies and engagement, Sponsored content analysis and discovery, and Fairness. Methodologically, the studies are categorised into machine learning-based techniques (e.g., classification, clustering) and non-machine-learning-based techniques (e.g., statistical analysis, network analysis). Key findings reveal a strong focus on optimising commercial outcomes, with limited attention to regulatory compliance and ethical considerations. The review highlights the need for more nuanced computational research that incorporates contextual factors such as language, platform, and industry type, as well as improved model explainability and dataset reproducibility. The paper concludes by proposing a multidisciplinary research agenda that emphasises the need for further links to regulation and compliance technology, finer granularity in analysis, and the development of standardised datasets.},
+  pdf={https://arxiv.org/pdf/2506.14602},
+  bibtex_show={true},
+  preview={influencer_marketing_survey.png}
 }
 
 @article{bertaglia2025disclosures,
