@@ -170,17 +170,6 @@ h2.bibliography { margin: 54px 0 8px; padding-bottom: 8px; border-bottom: 1px so
 .article-body pre { overflow-x: auto; padding: 18px; background: var(--paper-deep); }
 .article-body pre code { padding: 0; background: transparent; }
 
-.cv-contact { margin-top: 20px; font-size: .86rem; }
-.cv-section { display: grid; grid-template-columns: 190px minmax(0, 1fr); gap: 40px; padding: 39px 0 20px; border-top: 1px solid var(--ink); }
-.cv-section > h2 { margin: 0; font-size: 1.45rem; font-weight: 400; }
-.cv-list { margin: 0; padding: 0; list-style: none; }
-.cv-list li { display: grid; grid-template-columns: 90px minmax(0, 1fr); gap: 20px; padding: 0 0 30px; }
-.cv-date { padding-top: 5px; color: var(--muted); font: 600 .62rem/1.45 var(--sans); letter-spacing: .05em; text-transform: uppercase; }
-.cv-list h3 { margin: 0; font-size: 1.15rem; font-weight: 400; }
-.cv-organisation { margin: 4px 0 0; color: var(--muted); font-size: .85rem; }
-.cv-summary { margin: 10px 0 0; font-size: .84rem; line-height: 1.5; }
-.cv-summary p { margin: 0; }
-
 .site-footer { position: relative; border-top: 1px solid var(--ink); color: var(--muted); }
 .site-footer::before { content: ""; position: absolute; top: -3px; left: max(22px, calc((100% - var(--shell)) / 2)); width: 74px; height: 5px; background: var(--pink-soft); transform: rotate(-1.5deg); }
 .footer-inner { display: grid; grid-template-columns: max-content minmax(0, 1fr); align-items: start; gap: 28px 54px; padding-block: 24px 34px; }
@@ -215,8 +204,6 @@ h2.bibliography { margin: 54px 0 8px; padding-bottom: 8px; border-bottom: 1px so
   .publication, .publications-selected .publication { grid-template-columns: 76px minmax(0, 1fr); gap: 17px; }
   .contact-strip { grid-template-columns: 1fr; gap: 18px; }
   .research-theme { grid-template-columns: 30px 1fr; gap: 12px; }
-  .cv-section { grid-template-columns: 1fr; gap: 23px; }
-  .cv-list li { grid-template-columns: 72px minmax(0, 1fr); gap: 15px; }
   .footer-inner { grid-template-columns: 1fr; gap: 15px; }
   .site-footer nav { justify-content: start; gap: 13px 16px; }
   .contact-link { gap: 5px; }

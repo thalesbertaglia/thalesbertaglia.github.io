@@ -4,9 +4,15 @@ set -eu
 site_dir="${1:-_redesign/_site}"
 environment="${2:-development}"
 
-for route in index.html research/index.html publications/index.html notes/index.html teaching/index.html cv/index.html feed.xml sitemap.xml; do
+for route in index.html research/index.html publications/index.html notes/index.html teaching/index.html feed.xml sitemap.xml; do
   test -f "$site_dir/$route" || { echo "Missing $route" >&2; exit 1; }
 done
+
+test ! -e "$site_dir/cv/index.html" || { echo "The retired CV route was generated" >&2; exit 1; }
+if grep -R -q 'href="/cv/"' "$site_dir"; then
+  echo "A CV navigation link remains" >&2
+  exit 1
+fi
 
 publication_count=$(grep -c 'class="publication"' "$site_dir/publications/index.html")
 selected_count=$(grep -c 'class="publication"' "$site_dir/index.html")

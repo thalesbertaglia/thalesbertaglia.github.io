@@ -2,7 +2,7 @@
 
 This directory is a self-contained Jekyll prototype. The parent Jekyll site ignores underscore-prefixed directories, so building this project does not add routes to the current website.
 
-The prototype reads the parent bibliography, news, resume, portrait, and publication previews through relative links. Treat those linked paths as source material and edit the canonical parent files only.
+The prototype reads the parent bibliography, news, teaching page, portrait, and publication previews through relative links. Treat those linked paths as source material and edit the canonical parent files only.
 
 Typography uses the self-hosted, MIT-licensed ET Book webfont. Its license is included at `assets/fonts/ET-BOOK-LICENSE.txt`; the font source is <https://github.com/edwardtufte/et-book>.
 
@@ -43,7 +43,3 @@ _redesign/script/verify _redesign/_site
 Short entries come from the parent `_news` collection. They may define `kind` as `update`, `acceptance`, `rejection`, `award`, `experiment`, `revision`, `talk`, or `essay`, plus an optional `featured` boolean. Missing `kind` values fall back to `update`; missing `featured` values remain eligible for the homepage.
 
 Long-form Markdown posts belong in this prototype's `_posts` directory. The existing root sample post is intentionally not imported. `_fixtures/2026-01-01-layout-test.md` is parsed as a non-output collection item so the post layout remains build-tested without publishing a test URL.
-
-## Parent resume data
-
-The CV renders every section present in the parent JSON Resume. Some current parent entries are visibly template data; this prototype does not rewrite or silently replace them. Clean the canonical `assets/json/resume.json` before migration.
