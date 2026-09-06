@@ -1,0 +1,9 @@
+- title: Influence and information
+  summary: How platforms and creators shape commercial and political information online.
+  description: "I study how influence works through social media platforms and creators. Much of my work has focused on advertising, monetisation, and disclosure in the creator economy; more recently, I have also been looking at political content and questions around information integrity."
+- title: AI-mediated information
+  summary: How generative AI searches for information, chooses sources, and constructs recommendations.
+  description: "More recently, I have been studying what happens when generative AI becomes an intermediary between people and the web: how systems search for information, choose sources, construct recommendations, and make commercial advice visible. I am particularly interested in consumer advice and other settings where these choices can influence what people buy or trust."
+- title: Studying platforms from the outside
+  summary: Methods for collecting, auditing, and comparing systems that are only partly observable.
+  description: "A recurring problem in my work is that the systems I want to study are not built to be studied. I work on methods for collecting, auditing, and comparing platform and AI outputs, with a particular interest in measurement: what we can actually observe, how stable our measurements are, and what conclusions the available data can support."

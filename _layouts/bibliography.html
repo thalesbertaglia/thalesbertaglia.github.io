@@ -1,0 +1,51 @@
+<article class="publication" id="{{ entry.key }}">
+  {% if entry.preview %}
+    <div class="publication-preview">
+      <img src="{{ entry.preview | prepend: '/assets/img/publication_preview/' | relative_url }}" alt="Preview image for {{ entry.title | strip_html | escape }}" loading="lazy">
+    </div>
+  {% endif %}
+
+  <div class="publication-body">
+    <h3>{{ entry.title }}</h3>
+    <p class="publication-authors">
+      {% for author in entry.author_array %}
+        {% assign clean_last = author.last | replace: '*', '' | replace: '†', '' | replace: '‡', '' %}
+        {% assign is_self = false %}
+        {% if clean_last contains 'Bertaglia' and author.first contains 'Thales' %}{% assign is_self = true %}{% endif %}
+        {% if is_self %}<strong>{{ author.first }} {{ clean_last }}</strong>{% else %}{{ author.first }} {{ clean_last }}{% endif %}{% unless forloop.last %}{% if forloop.rindex == 2 %}, and {% else %}, {% endif %}{% endunless %}
+      {% endfor %}
+    </p>
+
+    <p class="publication-meta">
+      {% if entry.type == 'article' %}{{ entry.journal }}{% elsif entry.booktitle %}{{ entry.booktitle }}{% elsif entry.school %}{{ entry.school }}{% elsif entry.publisher %}{{ entry.publisher }}{% endif %}{% if entry.year %} · {{ entry.year }}{% endif %}
+    </p>
+
+    <div class="publication-links">
+      {% if entry.pdf %}<a href="{{ entry.pdf }}" rel="noopener noreferrer">PDF</a>{% endif %}
+      {% if entry.doi %}<a href="{% if entry.doi contains '://' %}{{ entry.doi }}{% else %}https://doi.org/{{ entry.doi }}{% endif %}" rel="noopener noreferrer">DOI</a>{% endif %}
+      {% if entry.url %}<a href="{{ entry.url }}" rel="noopener noreferrer">Article</a>{% endif %}
+      {% if entry.code %}<a href="{{ entry.code }}" rel="noopener noreferrer">Code</a>{% endif %}
+      {% if entry.website %}<a href="{{ entry.website }}" rel="noopener noreferrer">Website</a>{% endif %}
+      {% if entry.poster %}<a href="{{ entry.poster }}" rel="noopener noreferrer">Poster</a>{% endif %}
+      {% if entry.slides %}<a href="{{ entry.slides }}" rel="noopener noreferrer">Slides</a>{% endif %}
+    </div>
+
+    {% if entry.abstract or entry.bibtex_show %}
+      <div class="publication-details">
+        {% if entry.abstract %}
+          <details>
+            <summary>Abstract</summary>
+            <p>{{ entry.abstract }}</p>
+          </details>
+        {% endif %}
+        {% if entry.bibtex_show %}
+          <details>
+            <summary>BibTeX</summary>
+            <pre><code>{{ entry.bibtex | hide_custom_bibtex | escape }}</code></pre>
+          </details>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</article>
+

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'en' }}">
+  <head>
+    {% assign meta_description = page.description | default: site.description | strip_html | normalize_whitespace %}
+    {% assign meta_title = site.title %}
+    {% if page.title %}{% assign meta_title = page.title | append: ' · ' | append: site.title %}{% endif %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fbf8f4">
+    <meta name="description" content="{{ meta_description | escape }}">
+    <title>{{ meta_title }}</title>
+    <link rel="canonical" href="{{ page.url | absolute_url }}">
+    <meta property="og:title" content="{{ meta_title | escape }}">
+    <meta property="og:description" content="{{ meta_description | escape }}">
+    <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+    <meta property="og:url" content="{{ page.url | absolute_url }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ meta_title | escape }}">
+    <meta name="twitter:description" content="{{ meta_description | escape }}">
+    {% unless page.layout == 'post' and page.image == nil %}
+      <meta property="og:image" content="{% if page.image %}{{ page.image | absolute_url }}{% else %}{{ '/assets/img/og.jpg' | absolute_url }}{% endif %}">
+      <meta name="twitter:image" content="{% if page.image %}{{ page.image | absolute_url }}{% else %}{{ '/assets/img/og.jpg' | absolute_url }}{% endif %}">
+    {% endunless %}
+    <link rel="icon" href="{{ '/assets/img/favicon.png' | relative_url }}" type="image/png">
+    <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+    {% feed_meta %}
+  </head>
+  {% assign body_class = page.page_class %}
+  {% unless body_class %}{% assign body_class = page.title | default: 'standard' | slugify %}{% endunless %}
+  <body class="page-{{ body_class }}">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    {% include header.html %}
+    <main id="main-content" class="site-main">
+      {{ content }}
+    </main>
+    {% include footer.html %}
+    {% include analytics.html %}
+  </body>
+</html>

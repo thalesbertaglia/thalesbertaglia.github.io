@@ -1,0 +1,23 @@
+---
+layout: default
+---
+<div class="shell page-shell">
+  <header class="page-header">
+    {% if page.url == '/teaching/' %}
+      <p class="eyebrow">Courses &amp; summer schools</p>
+    {% else %}
+      <p class="eyebrow">{{ page.eyebrow | default: 'Thales Bertaglia' }}</p>
+    {% endif %}
+    <h1>{% if page.url == '/teaching/' %}{{ page.title | capitalize }}{% else %}{{ page.title }}{% endif %}</h1>
+    {% if page.url == '/teaching/' %}
+      <p class="page-description">Courses, lectures, workshops, and student projects I've taught or supervised.</p>
+    {% elsif page.description %}<p class="page-description">{{ page.description }}</p>{% endif %}
+  </header>
+  <div class="prose">
+    {% if page.url == '/teaching/' %}
+      {{ content | replace: '<h1', '<h2' | replace: '</h1>', '</h2>' }}
+    {% else %}
+      {{ content }}
+    {% endif %}
+  </div>
+</div>

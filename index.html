@@ -1,0 +1,56 @@
+---
+layout: default
+page_class: home
+description: Thales Bertaglia studies influence and information online, and how platforms and AI systems can be studied from the outside.
+---
+<div class="shell home-shell">
+  <section class="hero" aria-labelledby="home-title">
+    <div class="hero-copy">
+      <p class="eyebrow">Postdoctoral researcher · Utrecht University</p>
+      <h1 id="home-title">Thales <span class="name-mark">Bertaglia</span></h1>
+      <p class="hero-lede">I study influence and information online: how platforms, creators, and increasingly AI systems shape what reaches people, and how we can study these systems from the outside.</p>
+      <p>I am a postdoctoral researcher at Utrecht University, where I work on <a href="https://humanads.eu" rel="noopener noreferrer">HUMANads</a>, an ERC project on content monetisation and fairness in platform governance. My background is in computer science, but most of my work now sits somewhere between computational social science, platform governance, and law.</p>
+    </div>
+
+    <figure class="portrait">
+      <span class="tape" aria-hidden="true"></span>
+      <div class="portrait-frame">
+        <img src="{{ '/assets/img/prof_pic.webp' | relative_url }}" alt="Thales Bertaglia smiling outdoors" width="900" height="1056">
+      </div>
+      <img class="handmark" src="{{ '/assets/img/handmark.svg' | relative_url }}" alt="" width="44" height="44">
+    </figure>
+  </section>
+
+  <section class="home-section" aria-labelledby="themes-title">
+    <div class="section-heading">
+      <h2 id="themes-title">Research</h2>
+      <a href="{{ '/research/' | relative_url }}">All research</a>
+    </div>
+    <div class="theme-grid">
+      {% for theme in site.data.research %}
+        <article class="theme">
+          <span class="theme-number" aria-hidden="true">0{{ forloop.index }}</span>
+          <h3>{{ theme.title }}</h3>
+          <p>{{ theme.summary | default: theme.description }}</p>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="home-section" aria-labelledby="selected-title">
+    <div class="section-heading">
+      <h2 id="selected-title">Selected publications</h2>
+      <a href="{{ '/publications/' | relative_url }}">All publications</a>
+    </div>
+    <div class="publications publications-selected">
+      {% bibliography --group_by none --query @*[selected=true]* %}
+    </div>
+  </section>
+
+  {% include updates-list.html limit=4 heading='Recent updates' %}
+
+  <section class="contact-strip" aria-labelledby="contact-title">
+    <h2 id="contact-title">Contact</h2>
+    <p>Email me at <a href="mailto:{{ site.email }}">{{ site.email }}</a> or find my work through the profile links below.</p>
+  </section>
+</div>

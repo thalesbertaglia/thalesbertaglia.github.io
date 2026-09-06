@@ -1,29 +1,20 @@
-source 'https://rubygems.org'
-group :jekyll_plugins do
-    gem 'classifier-reborn'
-    gem 'jekyll'
-    gem 'jekyll-archives'
-    gem 'jekyll-email-protect'
-    gem 'jekyll-feed'
-    gem 'jekyll-get-json'
-    gem 'jekyll-imagemagick'
-    gem 'jekyll-jupyter-notebook'
-    gem 'jekyll-link-attributes'
-    gem 'jekyll-minifier'
-    gem 'jekyll-paginate-v2'
-    gem 'jekyll-regex-replace'
-    gem 'jekyll-scholar'
-    gem 'jekyll-sitemap'
-    gem 'jekyll-tabs'
-    gem 'jekyll-toc'
-    gem 'jekyll-twitter-plugin'
-    gem 'jemoji'
-    gem 'mini_racer'
-    gem 'unicode_utils'
-    gem 'webrick'
-end
-group :other_plugins do
-    gem 'css_parser'
-    gem 'feedjira'
-    gem 'httparty'
-end
+source "https://rubygems.org"
+
+gem "jekyll", "4.3.3"
+gem "jekyll-feed", "0.17.0"
+gem "jekyll-scholar", "7.1.3"
+gem "jekyll-sitemap", "1.4.0"
+gem "webrick", "1.8.1"
+
+gem "bibtex-ruby", "6.1.0"
+gem "bigdecimal", "3.1.8"
+gem "citeproc", "1.0.10"
+gem "citeproc-ruby", "1.1.14"
+gem "csl", "1.6.0"
+gem "csl-styles", "1.0.1.11"
+gem "ffi", "1.16.3"
+gem "google-protobuf", "4.26.1"
+gem "http_parser.rb", "0.8.0"
+gem "json", "2.7.2"
+gem "racc", "1.7.3"
+gem "sass-embedded", "1.77.0"

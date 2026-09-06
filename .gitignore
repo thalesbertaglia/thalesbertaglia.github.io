@@ -1,13 +1,11 @@
-# OS X
 .DS_Store
-
-# Jekyll build
-/_site/
+_site/
+.jekyll-cache/
 .jekyll-metadata
-Gemfile.lock
-
-# webstorm
-.idea/
-
-# others
-*.swp
+.sass-cache/
+.bundle/
+vendor/
+design-mockup*.html
+/gh-pages
+/gh-pages.pub
+!Gemfile.lock
