@@ -3,14 +3,14 @@ layout: default
 title: Writing
 permalink: /writing/
 page_class: writing
-description: Longer pieces and shorter research updates, collected in one place.
+description: Things I've published, presented, made, or been thinking about.
 ---
 
 <div class="shell page-shell">
   <header class="page-header">
     <p class="eyebrow">Ideas, experiments, and updates</p>
     <h1>Writing</h1>
-    <p class="page-description">Longer pieces and shorter research updates, collected in one place.</p>
+    <p class="page-description">Things I've published, presented, made, or been thinking about.</p>
   </header>
 
   {% if site.posts.size > 0 %}

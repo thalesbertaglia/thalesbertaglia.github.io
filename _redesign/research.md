@@ -3,7 +3,7 @@ layout: page
 title: Research
 permalink: /research/
 eyebrow: Research themes
-description: I am interested in how platforms and AI systems organise information, commercial influence, and access—and in the methodological problem of studying systems that are constantly changing and only partly observable.
+description: I am interested in how platforms and AI systems organise information and influence—and in the methodological problem of studying systems that are constantly changing and only partly observable.
 ---
 
 <div class="research-themes">
@@ -28,5 +28,5 @@ description: I am interested in how platforms and AI systems organise informatio
 
 <section class="methods-note" aria-labelledby="methods-title">
   <h2 id="methods-title">Methods</h2>
-  <p>Across these projects, I use methods from NLP, machine learning, and computational social science, often in collaboration with legal researchers. I also work on the less tidy part of interdisciplinary research: turning concepts from law and policy into things that can actually be measured, while keeping track of what gets lost in the process.</p>
+  <p>Across these projects, I use methods from NLP, machine learning, and computational social science, often in collaboration with legal researchers. I care about measurement and reproducibility, particularly when messy concepts from law, policy, or human behaviour have to become labels, datasets, and computational tasks. That translation is rarely as clean as the final numbers make it look.</p>
 </section>
