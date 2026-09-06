@@ -1,0 +1,9 @@
+Font Awesome Free 6.5.2
+Copyright 2024 Fonticons, Inc.
+
+The Font Awesome brand font is reused from the parent site for the social
+profile icons. Font Awesome Free is available under separate free licenses:
+icons under CC BY 4.0, fonts under SIL OFL 1.1, and code under the MIT License.
+
+License information: https://fontawesome.com/license/free
+Project: https://fontawesome.com/
