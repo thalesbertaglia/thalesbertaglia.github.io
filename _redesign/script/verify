@@ -4,7 +4,7 @@ set -eu
 site_dir="${1:-_redesign/_site}"
 environment="${2:-development}"
 
-for route in index.html research/index.html publications/index.html notes/index.html teaching/index.html feed.xml sitemap.xml; do
+for route in index.html research/index.html publications/index.html notes/index.html teaching/index.html notes/2026/06/18/what-counts-as-a-disclosure/index.html feed.xml sitemap.xml; do
   test -f "$site_dir/$route" || { echo "Missing $route" >&2; exit 1; }
 done
 
@@ -21,12 +21,16 @@ default_note_count=$(grep -c 'class="note note-update"' "$site_dir/notes/index.h
 
 test "$publication_count" -eq 24 || { echo "Expected 24 publications, found $publication_count" >&2; exit 1; }
 test "$selected_count" -eq 4 || { echo "Expected 4 selected publications, found $selected_count" >&2; exit 1; }
-test "$note_count" -eq 6 || { echo "Expected 6 notes, found $note_count" >&2; exit 1; }
+test "$note_count" -eq 13 || { echo "Expected 13 mixed notes, found $note_count" >&2; exit 1; }
 test "$default_note_count" -eq 6 || { echo "Expected all legacy news to default to update" >&2; exit 1; }
 grep -q 'https://www.last.fm/user/thalesbertaglia' "$site_dir/index.html" || { echo "Last.fm profile link missing" >&2; exit 1; }
 
+for kind in update acceptance rejection award experiment revision talk essay; do
+  grep -q "class=\"note note-$kind\"" "$site_dir/notes/index.html" || { echo "Missing $kind note fixture" >&2; exit 1; }
+done
+
 previous_line=0
-for date_label in '30 May 2025' '06 May 2025' '16 Jan 2025' '26 Nov 2024' '09 Sep 2024' '01 Jul 2024'; do
+for date_label in '18 Jun 2026' '12 May 2026' '03 Apr 2026' '07 Mar 2026' '14 Feb 2026' '22 Jan 2026' '09 Jan 2026' '30 May 2025' '06 May 2025' '16 Jan 2025' '26 Nov 2024' '09 Sep 2024' '01 Jul 2024'; do
   current_line=$(grep -n "$date_label" "$site_dir/notes/index.html" | head -n 1 | cut -d: -f1)
   test "$current_line" -gt "$previous_line" || { echo "Notes are not reverse chronological" >&2; exit 1; }
   previous_line="$current_line"
@@ -34,6 +38,13 @@ done
 
 if grep -R -q 'Post layout fixture\|sample-posts\|projects/1_project' "$site_dir"; then
   echo "Demo content leaked into the redesign build" >&2
+  exit 1
+fi
+
+post_file="$site_dir/notes/2026/06/18/what-counts-as-a-disclosure/index.html"
+grep -q '<meta property="og:title" content="Prototype: What counts as a disclosure? · Thales Bertaglia">' "$post_file" || { echo "Post metadata missing" >&2; exit 1; }
+if grep -q '<meta property="og:image"' "$post_file"; then
+  echo "Placeholder post should not inherit the site-wide sharing image" >&2
   exit 1
 fi
 

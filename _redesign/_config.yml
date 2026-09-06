@@ -15,12 +15,15 @@ permalink: /notes/:year/:month/:day/:title/
 collections:
   news:
     output: false
+  lab_notes:
+    output: false
   fixtures:
     output: false
 
 defaults:
   - scope:
       path: ""
+      type: pages
     values:
       layout: page
   - scope:
