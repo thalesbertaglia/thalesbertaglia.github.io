@@ -38,10 +38,10 @@ Run the build assertions from the repository root:
 _redesign/script/verify _redesign/_site
 ```
 
-## Notes content
+## Writing and updates
 
-Short entries come from the parent `_news` collection and are deliberately rendered as one unclassified chronology. An optional `featured` boolean controls homepage eligibility; missing values remain eligible.
+The Writing page separates two publishing modes without introducing visible categories. Longer pieces live in `_posts` and receive their own pages. Short updates come from the parent `_news` collection and are rendered inline in one chronological Updates list. An optional `featured` boolean controls homepage eligibility; missing values remain eligible.
 
-One clearly worded failure fixture lives in `_lab_notes`. Long-form Markdown posts belong in this prototype's `_posts` directory. The included demonstration essay exercises the live post route, feed, and mixed chronology. The existing root sample post is intentionally not imported.
+One clearly worded failure fixture lives in `_lab_notes`. This collection is also the safe place for prototype-only short updates because the linked parent `_news` files belong to the current website. The included demonstration essay exercises the writing layout and feed. The existing root sample post is intentionally not imported.
 
 `_fixtures/2026-01-01-layout-test.md` remains a non-output collection item for testing unpublished layouts. Remove the demo post and `_lab_notes` collection before migration.

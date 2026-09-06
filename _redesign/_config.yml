@@ -10,7 +10,7 @@ google_analytics: G-6BNSQF7PZW
 lastfm_id: thalesbertaglia
 linkedin_username: thales-bertaglia
 
-permalink: /notes/:year/:month/:day/:title/
+permalink: /writing/:year/:month/:day/:title/
 
 collections:
   news:

@@ -4,7 +4,7 @@ set -eu
 site_dir="${1:-_redesign/_site}"
 environment="${2:-development}"
 
-for route in index.html research/index.html publications/index.html notes/index.html teaching/index.html notes/2026/06/18/what-counts-as-a-disclosure/index.html feed.xml sitemap.xml; do
+for route in index.html research/index.html publications/index.html writing/index.html teaching/index.html writing/2026/06/18/what-counts-as-a-disclosure/index.html feed.xml sitemap.xml; do
   test -f "$site_dir/$route" || { echo "Missing $route" >&2; exit 1; }
 done
 
@@ -16,21 +16,23 @@ fi
 
 publication_count=$(grep -c 'class="publication"' "$site_dir/publications/index.html")
 selected_count=$(grep -c 'class="publication"' "$site_dir/index.html")
-note_count=$(grep -c 'class="note"' "$site_dir/notes/index.html")
+note_count=$(grep -c 'class="note"' "$site_dir/writing/index.html")
+writing_count=$(grep -c '<li>' "$site_dir/writing/index.html")
 
 test "$publication_count" -eq 24 || { echo "Expected 24 publications, found $publication_count" >&2; exit 1; }
 test "$selected_count" -eq 4 || { echo "Expected 4 selected publications, found $selected_count" >&2; exit 1; }
-test "$note_count" -eq 8 || { echo "Expected 8 mixed news and notes, found $note_count" >&2; exit 1; }
+test "$note_count" -eq 7 || { echo "Expected 7 updates, found $note_count" >&2; exit 1; }
+test "$writing_count" -eq 1 || { echo "Expected 1 writing entry, found $writing_count" >&2; exit 1; }
 grep -q 'https://www.last.fm/user/thalesbertaglia' "$site_dir/index.html" || { echo "Last.fm profile link missing" >&2; exit 1; }
 
-if grep -q 'note-label\|note-symbol\|note-rejection\|note-essay' "$site_dir/notes/index.html"; then
+if grep -q 'note-label\|note-symbol\|note-rejection\|note-essay' "$site_dir/writing/index.html"; then
   echo "Category styling leaked into the flat chronology" >&2
   exit 1
 fi
 
 previous_line=0
-for date_label in '18 Jun 2026' '12 May 2026' '30 May 2025' '06 May 2025' '16 Jan 2025' '26 Nov 2024' '09 Sep 2024' '01 Jul 2024'; do
-  current_line=$(grep -n "$date_label" "$site_dir/notes/index.html" | head -n 1 | cut -d: -f1)
+for date_label in '12 May 2026' '30 May 2025' '06 May 2025' '16 Jan 2025' '26 Nov 2024' '09 Sep 2024' '01 Jul 2024'; do
+  current_line=$(grep -n "$date_label" "$site_dir/writing/index.html" | head -n 1 | cut -d: -f1)
   test "$current_line" -gt "$previous_line" || { echo "Notes are not reverse chronological" >&2; exit 1; }
   previous_line="$current_line"
 done
@@ -40,7 +42,7 @@ if grep -R -q 'Post layout fixture\|sample-posts\|projects/1_project' "$site_dir
   exit 1
 fi
 
-post_file="$site_dir/notes/2026/06/18/what-counts-as-a-disclosure/index.html"
+post_file="$site_dir/writing/2026/06/18/what-counts-as-a-disclosure/index.html"
 grep -q '<meta property="og:title" content="Prototype: What counts as a disclosure? · Thales Bertaglia">' "$post_file" || { echo "Post metadata missing" >&2; exit 1; }
 if grep -q '<meta property="og:image"' "$post_file"; then
   echo "Placeholder post should not inherit the site-wide sharing image" >&2

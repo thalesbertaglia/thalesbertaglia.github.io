@@ -176,7 +176,13 @@ h2.bibliography { margin: 54px 0 8px; padding-bottom: 8px; border-bottom: 1px so
 .page-teaching .prose { line-height: 1.42; }
 .page-teaching .prose h2 { margin: 1.7em 0 .72em; }
 
-.page-notes .notes-section { margin-top: 0; }
+.page-writing .updates-section { margin-top: 86px; }
+.writing-index { max-width: 820px; }
+.writing-list { margin: 0; padding: 0; list-style: none; }
+.writing-list li { display: grid; grid-template-columns: 112px 1fr; gap: 2px 28px; padding: 24px 0 28px; border-bottom: 1px solid var(--line); }
+.writing-list time { grid-row: 1 / span 2; padding-top: 5px; color: var(--muted); font: 600 .62rem/1.45 var(--sans); font-variant-numeric: tabular-nums; letter-spacing: .07em; text-transform: uppercase; }
+.writing-list h3 { margin: 0; font-size: 1.2rem; font-weight: 400; }
+.writing-list p { margin: 5px 0 0; color: var(--muted); font-size: .9rem; }
 .article-shell { padding-block: 76px 100px; }
 .article-header { position: relative; max-width: 760px; margin-bottom: 48px; }
 .article-header::before { content: ""; position: absolute; top: -18px; left: -13px; width: 47px; height: 7px; background: var(--pink-soft); transform: rotate(-3deg); }
@@ -217,6 +223,7 @@ h2.bibliography { margin: 54px 0 8px; padding-bottom: 8px; border-bottom: 1px so
   .theme { grid-template-columns: 30px 1fr; }
   .section-heading { align-items: center; }
   .note { grid-template-columns: 82px 1fr; gap: 18px; }
+  .writing-list li { grid-template-columns: 82px 1fr; gap: 2px 18px; }
   .publication, .publications-selected .publication { grid-template-columns: 76px minmax(0, 1fr); gap: 17px; }
   .publications-selected .publication-preview { padding: 4px; box-shadow: 3px 3px 0 var(--pink-soft); }
   .contact-strip { grid-template-columns: 1fr; gap: 18px; }
