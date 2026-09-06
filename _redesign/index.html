@@ -17,8 +17,9 @@ description: Thales Bertaglia is a postdoctoral researcher at Utrecht University
       <div class="portrait-frame">
         <img src="{{ '/assets/img/prof_pic.jpg' | relative_url }}" alt="Thales Bertaglia smiling outdoors" width="4364" height="5120">
       </div>
-      <figcaption>Thales, photographed outdoors.</figcaption>
-      <span class="handmark" aria-hidden="true">✳</span>
+      <svg class="handmark" viewBox="0 0 44 44" aria-hidden="true">
+        <path d="M23 3c-1 11-1 25-2 38M4 23c12-2 24-1 37-3M9 8c8 9 17 18 26 27M35 7C26 17 17 28 8 37"/>
+      </svg>
     </figure>
   </section>
 
@@ -51,10 +52,7 @@ description: Thales Bertaglia is a postdoctoral researcher at Utrecht University
   {% include notes-list.html limit=4 heading='Recent news & notes' %}
 
   <section class="contact-strip" aria-labelledby="contact-title">
-    <div>
-      <p class="eyebrow">Contact</p>
-      <h2 id="contact-title">Get in touch</h2>
-    </div>
-    <p>Email me at <a href="mailto:{{ site.email }}">{{ site.email }}</a> or find my work through the profile links below.</p>
+    <h2 id="contact-title">Contact</h2>
+    <p><a href="mailto:{{ site.email }}">{{ site.email }}</a><br>Utrecht, the Netherlands</p>
   </section>
 </div>

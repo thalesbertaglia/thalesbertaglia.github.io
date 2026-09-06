@@ -4,7 +4,7 @@ title: Publications
 permalink: /publications/
 page_class: publications
 eyebrow: Bibliography
-description: Publications in reverse chronological order. The bibliography is generated from BibTeX.
+description: Research publications and academic work, in reverse chronological order.
 ---
 
 <div class="publications publications-all">

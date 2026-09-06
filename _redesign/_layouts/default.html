@@ -24,7 +24,9 @@
     <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
     {% feed_meta %}
   </head>
-  <body class="page-{{ page.page_class | default: 'standard' }}">
+  {% assign body_class = page.page_class %}
+  {% unless body_class %}{% assign body_class = page.title | default: 'standard' | slugify %}{% endunless %}
+  <body class="page-{{ body_class }}">
     <a class="skip-link" href="#main-content">Skip to content</a>
     {% include header.html %}
     <main id="main-content" class="site-main">

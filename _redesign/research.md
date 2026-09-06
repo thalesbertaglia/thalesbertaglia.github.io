@@ -15,16 +15,15 @@ description: My work combines computational social science, digital governance, 
         <p>{{ theme.description }}</p>
         {% case forloop.index %}
           {% when 1 %}
-            <p class="related-work"><a href="{{ '/publications/#bertaglia2025disclosures' | relative_url }}">Influencer self-disclosure practices on Instagram</a> · <a href="{{ '/publications/#phdthesis' | relative_url }}">Decoding digital influence</a></p>
+            <p class="related-work"><span>Related work</span><a href="{{ '/publications/#bertaglia2025disclosures' | relative_url }}">Influencer self-disclosure practices on Instagram</a> · <a href="{{ '/publications/#phdthesis' | relative_url }}">Decoding digital influence</a></p>
           {% when 2 %}
-            <p class="related-work"><a href="{{ '/publications/#goanta2025great' | relative_url }}">The Great Data Standoff</a> · <a href="{{ '/publications/#annabell2025tiktok' | relative_url }}">TikTok search recommendations</a></p>
+            <p class="related-work"><span>Related work</span><a href="{{ '/publications/#goanta2025great' | relative_url }}">The Great Data Standoff</a> · <a href="{{ '/publications/#annabell2025tiktok' | relative_url }}">TikTok search recommendations</a></p>
           {% when 3 %}
-            <p class="related-work"><a href="{{ '/publications/#bauer2025towards' | relative_url }}">Fairness in Dutch hate-speech detection</a> · <a href="{{ '/publications/#bertaglia2023sexism' | relative_url }}">Sexism in Focus</a></p>
+            <p class="related-work"><span>Related work</span><a href="{{ '/publications/#bauer2025towards' | relative_url }}">Fairness in Dutch hate-speech detection</a> · <a href="{{ '/publications/#bertaglia2023sexism' | relative_url }}">Sexism in Focus</a></p>
           {% when 4 %}
-            <p class="related-work"><a href="{{ '/publications/#gui2025evaluating' | relative_url }}">LLM-generated legal explanations</a> · <a href="{{ '/publications/#bertaglia2023closing' | relative_url }}">Closing the Loop</a></p>
+            <p class="related-work"><span>Related work</span><a href="{{ '/publications/#gui2025evaluating' | relative_url }}">LLM-generated legal explanations</a> · <a href="{{ '/publications/#bertaglia2023closing' | relative_url }}">Closing the Loop</a></p>
         {% endcase %}
       </div>
     </section>
   {% endfor %}
 </div>
-

@@ -10,7 +10,7 @@ description: Research news, outcomes, and longer writing in one chronology.
   <header class="page-header">
     <p class="eyebrow">A chronological record</p>
     <h1>News &amp; notes</h1>
-    <p class="page-description">Academic work has ups and downs. This chronology keeps publications, talks, rejections, revisions, and longer notes together in one record.</p>
+    <p class="page-description">A chronological record of publications, talks, project updates, longer notes—and work that did not go to plan.</p>
   </header>
   {% include notes-list.html heading='All entries' %}
 </div>
