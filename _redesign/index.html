@@ -1,15 +1,15 @@
 ---
 layout: default
 page_class: home
-description: Thales Bertaglia is a postdoctoral researcher at Utrecht University working on the creator economy, social media platforms, and platform governance.
+description: Thales Bertaglia studies how digital platforms and AI systems shape what people see, buy, and believe—and how these systems can be studied from the outside.
 ---
 <div class="shell home-shell">
   <section class="hero" aria-labelledby="home-title">
     <div class="hero-copy">
       <p class="eyebrow">Postdoctoral researcher · Utrecht University</p>
       <h1 id="home-title">Thales <span class="name-mark">Bertaglia</span></h1>
-      <p class="hero-lede">I study the creator economy and social media platforms, focusing on how content monetisation, algorithmic systems, and platform regulation interact.</p>
-      <p>I am a postdoctoral researcher at the Faculty of Law, Economics, and Governance at Utrecht University. I currently work on the ERC Starting Grant <a href="https://humanads.eu" rel="noopener noreferrer">HUMANads</a>, which examines content monetisation and private-law fairness in platform governance.</p>
+      <p class="hero-lede">I study how digital platforms and AI systems shape what people see, buy, and believe—and how we can study these systems from the outside.</p>
+      <p>I am a postdoctoral researcher at Utrecht University, where I work on <a href="https://humanads.eu" rel="noopener noreferrer">HUMANads</a>, an ERC project on content monetisation and fairness in platform governance. My background is in computer science, but most of my work now sits somewhere between computational social science, platform governance, and law.</p>
     </div>
 
     <figure class="portrait">
@@ -33,7 +33,7 @@ description: Thales Bertaglia is a postdoctoral researcher at Utrecht University
         <article class="theme">
           <span class="theme-number" aria-hidden="true">0{{ forloop.index }}</span>
           <h3>{{ theme.title }}</h3>
-          <p>{{ theme.description }}</p>
+          <p>{{ theme.summary | default: theme.description }}</p>
         </article>
       {% endfor %}
     </div>

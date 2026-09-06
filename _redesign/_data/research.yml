@@ -1,9 +1,9 @@
-- title: Creator economy
-  description: Studying content monetisation, influencer practices, advertising disclosures, and the incentives that shape creator behaviour across social media platforms.
-- title: Platform governance
-  description: Examining how platform design, data access, algorithmic systems, and regulation interact, particularly under European digital regulation.
-- title: Online harms
-  description: Developing and evaluating computational approaches for studying abusive language, toxicity, sexism, and fairness in content moderation.
-- title: Computational methods for law and policy
-  description: Translating legal and regulatory concepts into reproducible computational tasks while keeping their assumptions and limitations visible.
-
+- title: Commercial influence
+  summary: Creators, advertising disclosures, and the platforms that organise commercial relationships online.
+  description: "I study how commercial influence works online: how creators monetise attention, how advertising is disclosed (or not), and how platforms shape the relationship between creators, advertisers, and audiences."
+- title: AI-mediated information
+  summary: How generative AI searches for information, chooses sources, and constructs recommendations.
+  description: "More recently, I have been studying what happens when generative AI becomes an intermediary between people and the web: how systems search for information, choose sources, construct recommendations, and make commercial advice visible. I am particularly interested in consumer advice and other settings where these choices can influence what people buy or trust."
+- title: Studying platforms from the outside
+  summary: Methods for collecting, auditing, and comparing systems that are only partly observable.
+  description: "A recurring problem in my work is that the systems I want to study are not built to be studied. I work on methods for collecting, auditing, and comparing platform and AI outputs, while paying attention to what the available data can—and cannot—tell us."
