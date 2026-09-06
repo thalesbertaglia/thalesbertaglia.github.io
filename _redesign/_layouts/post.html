@@ -3,11 +3,7 @@ layout: default
 ---
 <article class="shell article-shell">
   <header class="article-header">
-    <p class="eyebrow">
-      {{ page.kind | default: 'Essay' }} · {{ page.date | date: '%d %B %Y' }}
-      {% if page.demo %}<span class="note-demo">prototype</span>{% endif %}
-      {% if page.kind == 'rejection' or page.kind == 'revision' %}<span class="outcome-mark-inline" aria-hidden="true">{% if page.kind == 'rejection' %}×{% else %}↻{% endif %}</span>{% endif %}
-    </p>
+    <p class="eyebrow">Note · {{ page.date | date: '%d %B %Y' }}</p>
     <h1>{{ page.title }}</h1>
     {% if page.description %}<p class="page-description">{{ page.description }}</p>{% endif %}
   </header>

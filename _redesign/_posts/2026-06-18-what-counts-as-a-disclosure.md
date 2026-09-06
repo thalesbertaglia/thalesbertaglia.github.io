@@ -2,7 +2,6 @@
 layout: post
 title: "Prototype: What counts as a disclosure?"
 date: 2026-06-18
-kind: essay
 featured: true
 demo: true
 description: A demonstration long-form note about translating disclosure rules into observable platform signals.

@@ -1,7 +1,7 @@
 {% assign combined_notes = site.news | concat: site.lab_notes | concat: site.posts | sort: 'date' | reverse %}
 <section class="home-section notes-section" aria-labelledby="notes-title">
   <div class="section-heading">
-    <h2 id="notes-title">{{ include.heading | default: 'Notes & outcomes' }}</h2>
+    <h2 id="notes-title">{{ include.heading | default: 'News & notes' }}</h2>
     {% if include.limit %}<a href="{{ '/notes/' | relative_url }}">All notes</a>{% endif %}
   </div>
   <ol class="notes-list">
@@ -9,21 +9,9 @@
     {% for item in combined_notes %}
       {% if include.limit and item.featured == false %}{% continue %}{% endif %}
       {% if include.limit and shown >= include.limit %}{% break %}{% endif %}
-      {% assign note_kind = item.kind | default: 'update' %}
-      {% case note_kind %}
-        {% when 'acceptance' %}{% assign note_symbol = '✓' %}{% assign note_label = 'Accepted' %}
-        {% when 'rejection' %}{% assign note_symbol = '×' %}{% assign note_label = 'Not accepted' %}
-        {% when 'award' %}{% assign note_symbol = '✦' %}{% assign note_label = 'Award' %}
-        {% when 'experiment' %}{% assign note_symbol = '◇' %}{% assign note_label = 'Experiment' %}
-        {% when 'revision' %}{% assign note_symbol = '↻' %}{% assign note_label = 'Revision' %}
-        {% when 'talk' %}{% assign note_symbol = '↗' %}{% assign note_label = 'Talk' %}
-        {% when 'essay' %}{% assign note_symbol = '¶' %}{% assign note_label = 'Essay' %}
-        {% else %}{% assign note_symbol = '·' %}{% assign note_label = 'Update' %}
-      {% endcase %}
-      <li class="note note-{{ note_kind }}">
+      <li class="note">
         <time datetime="{{ item.date | date_to_xmlschema }}">{{ item.date | date: '%d %b %Y' }}</time>
         <div class="note-body">
-          <p class="note-label"><span class="note-symbol" aria-hidden="true">{{ note_symbol }}</span>{{ note_label }}{% if item.demo %}<span class="note-demo">prototype</span>{% endif %}</p>
           {% if item.collection == 'posts' %}
             <h3><a href="{{ item.url | relative_url }}">{{ item.title }}</a></h3>
             {% if item.description %}<p>{{ item.description }}</p>{% endif %}

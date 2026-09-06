@@ -40,8 +40,8 @@ _redesign/script/verify _redesign/_site
 
 ## Notes content
 
-Short entries come from the parent `_news` collection. They may define `kind` as `update`, `acceptance`, `rejection`, `award`, `experiment`, `revision`, `talk`, or `essay`, plus an optional `featured` boolean. Missing `kind` values fall back to `update`; missing `featured` values remain eligible for the homepage.
+Short entries come from the parent `_news` collection and are deliberately rendered as one unclassified chronology. An optional `featured` boolean controls homepage eligibility; missing values remain eligible.
 
-Prototype-only short entries live in `_lab_notes`; each is visibly marked with `demo: true`. Long-form Markdown posts belong in this prototype's `_posts` directory. The included demonstration essay exercises the live post route, feed, and mixed chronology. The existing root sample post is intentionally not imported.
+One clearly worded failure fixture lives in `_lab_notes`. Long-form Markdown posts belong in this prototype's `_posts` directory. The included demonstration essay exercises the live post route, feed, and mixed chronology. The existing root sample post is intentionally not imported.
 
 `_fixtures/2026-01-01-layout-test.md` remains a non-output collection item for testing unpublished layouts. Remove the demo post and `_lab_notes` collection before migration.
