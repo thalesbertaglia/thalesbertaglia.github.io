@@ -17,6 +17,7 @@ test "$publication_count" -eq 24 || { echo "Expected 24 publications, found $pub
 test "$selected_count" -eq 4 || { echo "Expected 4 selected publications, found $selected_count" >&2; exit 1; }
 test "$note_count" -eq 6 || { echo "Expected 6 notes, found $note_count" >&2; exit 1; }
 test "$default_note_count" -eq 6 || { echo "Expected all legacy news to default to update" >&2; exit 1; }
+grep -q 'https://www.last.fm/user/thalesbertaglia' "$site_dir/index.html" || { echo "Last.fm profile link missing" >&2; exit 1; }
 
 previous_line=0
 for date_label in '30 May 2025' '06 May 2025' '16 Jan 2025' '26 Nov 2024' '09 Sep 2024' '01 Jul 2024'; do
