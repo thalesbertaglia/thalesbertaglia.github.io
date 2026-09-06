@@ -119,10 +119,12 @@ h1 { max-width: 700px; margin: 0; font-size: clamp(3rem, 6vw, 4.65rem); font-wei
 .bibliography { margin: 0; padding: 0; list-style: none; }
 h2.bibliography { margin: 54px 0 8px; padding-bottom: 8px; border-bottom: 1px solid var(--ink); font-size: 1.5rem; font-weight: 400; }
 .bibliography > li { margin: 0; }
-.publication { display: grid; grid-template-columns: 118px minmax(0, 1fr); gap: 28px; padding: 29px 0 32px; border-bottom: 1px solid var(--line); }
-.publication-preview { padding-top: 4px; }
-.publication-preview img { display: block; width: 100%; max-height: 126px; object-fit: contain; object-position: left top; mix-blend-mode: multiply; }
-.publication h3 { margin: 0; font-size: 1.23rem; font-weight: 400; line-height: 1.25; }
+.publication { display: grid; grid-template-columns: 118px minmax(0, 1fr); align-items: start; gap: 28px; padding: 29px 0 32px; border-bottom: 1px solid var(--line); }
+.publication-preview { position: relative; align-self: start; display: flex; min-height: 108px; padding: 7px 7px 10px; background: #fffdf9; border: 1px solid var(--line); box-shadow: 4px 4px 0 var(--pink-soft); transform: rotate(-1.2deg); }
+.publication:nth-child(3n) .publication-preview { transform: rotate(1deg); }
+.publication-preview::after { content: ""; position: absolute; right: 9px; bottom: -4px; width: 30px; height: 3px; background: var(--pink-soft); transform: rotate(-2deg); }
+.publication-preview img { display: block; width: 100%; height: 89px; object-fit: contain; object-position: center top; mix-blend-mode: multiply; }
+.page-publications .publication-body h3, .publications-selected .publication-body h3 { margin: 0; font-size: 1.23rem; font-weight: 400; line-height: 1.25; }
 .publication-authors { margin: 7px 0 0; color: var(--muted); font-size: .82rem; line-height: 1.45; }
 .publication-authors strong { color: var(--ink); font-weight: 700; }
 .publication-meta { margin: 5px 0 0; color: var(--muted); }
@@ -135,9 +137,9 @@ h2.bibliography { margin: 54px 0 8px; padding-bottom: 8px; border-bottom: 1px so
 .publication-details pre { max-width: 100%; margin: 3px 0 16px; padding: 14px; overflow-x: auto; background: var(--paper-deep); font-size: .7rem; line-height: 1.45; }
 .publications-selected .publication { grid-template-columns: 96px minmax(0, 1fr); }
 .publications-selected .publication-details { display: none; }
-.publications-selected .publication-preview { align-self: start; padding: 5px; background: #fffdf9; border: 1px solid var(--line); box-shadow: 4px 4px 0 var(--pink-soft); transform: rotate(-1.4deg); }
+.publications-selected .publication-preview { min-height: 98px; padding: 5px; transform: rotate(-1.4deg); }
 .publications-selected .bibliography > li:nth-child(even) .publication-preview { transform: rotate(1.2deg); }
-.publications-selected .publication-preview img { max-height: 112px; mix-blend-mode: normal; }
+.publications-selected .publication-preview img { height: 86px; mix-blend-mode: normal; }
 
 .updates-list { margin: 0; padding: 0; list-style: none; }
 .update { display: grid; grid-template-columns: 112px 1fr; gap: 28px; padding: 20px 0; border-bottom: 1px solid var(--line); }
@@ -226,7 +228,10 @@ h2.bibliography { margin: 54px 0 8px; padding-bottom: 8px; border-bottom: 1px so
   .update { grid-template-columns: 82px 1fr; gap: 18px; }
   .writing-list li { grid-template-columns: 82px 1fr; gap: 2px 18px; }
   .publication, .publications-selected .publication { grid-template-columns: 76px minmax(0, 1fr); gap: 17px; }
-  .publications-selected .publication-preview { padding: 4px; box-shadow: 3px 3px 0 var(--pink-soft); }
+  .publication-preview { min-height: 72px; padding: 4px 4px 6px; box-shadow: 3px 3px 0 var(--pink-soft); }
+  .publication-preview::after { right: 5px; bottom: -3px; width: 20px; height: 2px; }
+  .publication-preview img, .publications-selected .publication-preview img { height: 60px; }
+  .publications-selected .publication-preview { min-height: 70px; padding: 4px; }
   .contact-strip { grid-template-columns: 1fr; gap: 18px; }
   .research-theme { grid-template-columns: 30px 1fr; gap: 12px; }
   .footer-inner { grid-template-columns: 1fr; gap: 15px; }
