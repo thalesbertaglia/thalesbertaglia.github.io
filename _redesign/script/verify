@@ -4,53 +4,42 @@ set -eu
 site_dir="${1:-_redesign/_site}"
 environment="${2:-development}"
 
-for route in index.html research/index.html publications/index.html writing/index.html teaching/index.html writing/2026/06/18/what-counts-as-a-disclosure/index.html feed.xml sitemap.xml; do
+for route in index.html research/index.html publications/index.html writing/index.html teaching/index.html feed.xml sitemap.xml robots.txt CNAME; do
   test -f "$site_dir/$route" || { echo "Missing $route" >&2; exit 1; }
 done
 
 test ! -e "$site_dir/cv/index.html" || { echo "The retired CV route was generated" >&2; exit 1; }
-if grep -R -q 'href="/cv/"' "$site_dir"; then
-  echo "A CV navigation link remains" >&2
-  exit 1
-fi
+test ! -e "$site_dir/notes/index.html" || { echo "The retired Notes route was generated" >&2; exit 1; }
 
 publication_count=$(grep -c 'class="publication"' "$site_dir/publications/index.html")
 selected_count=$(grep -c 'class="publication"' "$site_dir/index.html")
-note_count=$(grep -c 'class="note"' "$site_dir/writing/index.html")
-writing_count=$(grep -c '<li>' "$site_dir/writing/index.html")
+updates_count=$(grep -c 'class="update"' "$site_dir/writing/index.html")
+home_updates_count=$(grep -c 'class="update"' "$site_dir/index.html")
 
 test "$publication_count" -eq 24 || { echo "Expected 24 publications, found $publication_count" >&2; exit 1; }
 test "$selected_count" -eq 4 || { echo "Expected 4 selected publications, found $selected_count" >&2; exit 1; }
-test "$note_count" -eq 7 || { echo "Expected 7 updates, found $note_count" >&2; exit 1; }
-test "$writing_count" -eq 1 || { echo "Expected 1 writing entry, found $writing_count" >&2; exit 1; }
-grep -q 'https://www.last.fm/user/thalesbertaglia' "$site_dir/index.html" || { echo "Last.fm profile link missing" >&2; exit 1; }
-
-if grep -q 'note-label\|note-symbol\|note-rejection\|note-essay' "$site_dir/writing/index.html"; then
-  echo "Category styling leaked into the flat chronology" >&2
-  exit 1
-fi
+test "$updates_count" -eq 6 || { echo "Expected 6 updates, found $updates_count" >&2; exit 1; }
+test "$home_updates_count" -eq 4 || { echo "Expected 4 homepage updates, found $home_updates_count" >&2; exit 1; }
 
 previous_line=0
-for date_label in '12 May 2026' '30 May 2025' '06 May 2025' '16 Jan 2025' '26 Nov 2024' '09 Sep 2024' '01 Jul 2024'; do
+for date_label in '30 May 2025' '06 May 2025' '16 Jan 2025' '26 Nov 2024' '09 Sep 2024' '01 Jul 2024'; do
   current_line=$(grep -n "$date_label" "$site_dir/writing/index.html" | head -n 1 | cut -d: -f1)
-  test "$current_line" -gt "$previous_line" || { echo "Notes are not reverse chronological" >&2; exit 1; }
+  test "$current_line" -gt "$previous_line" || { echo "Updates are not reverse chronological" >&2; exit 1; }
   previous_line="$current_line"
 done
 
-if grep -R -q 'Post layout fixture\|sample-posts\|projects/1_project' "$site_dir"; then
-  echo "Demo content leaked into the redesign build" >&2
-  exit 1
-fi
+grep -q 'thalesbertaglia.com' "$site_dir/CNAME" || { echo "CNAME is incorrect" >&2; exit 1; }
+grep -q 'https://www.last.fm/user/thalesbertaglia' "$site_dir/index.html" || { echo "Last.fm profile link missing" >&2; exit 1; }
 
-post_file="$site_dir/writing/2026/06/18/what-counts-as-a-disclosure/index.html"
-grep -q '<meta property="og:title" content="Prototype: What counts as a disclosure? · Thales Bertaglia">' "$post_file" || { echo "Post metadata missing" >&2; exit 1; }
-if grep -q '<meta property="og:image"' "$post_file"; then
-  echo "Placeholder post should not inherit the site-wide sharing image" >&2
+if grep -R -E -i -q 'prototype|placeholder|layout fixture|sample-posts|projects/1_project' "$site_dir"; then
+  echo "Development-only content leaked into the public build" >&2
   exit 1
 fi
 
 if [ "$environment" = production ]; then
-  grep -q 'G-6BNSQF7PZW' "$site_dir/index.html" || { echo "Production analytics missing" >&2; exit 1; }
+  for page in $(find "$site_dir" -name '*.html' -type f); do
+    grep -q 'G-6BNSQF7PZW' "$page" || { echo "Production analytics missing from $page" >&2; exit 1; }
+  done
 else
   if grep -R -q '<script' "$site_dir"; then
     echo "Development output unexpectedly contains JavaScript" >&2
@@ -58,4 +47,4 @@ else
   fi
 fi
 
-echo "Verified routes, content counts, chronology, fixture isolation, and $environment analytics behavior."
+echo "Verified routes, publications, updates, production metadata, and $environment analytics behavior."

@@ -3,14 +3,14 @@ layout: default
 title: Writing
 permalink: /writing/
 page_class: writing
-description: Longer pieces and a chronological record of research updates.
+description: Longer pieces and shorter research updates, collected in one place.
 ---
 
 <div class="shell page-shell">
   <header class="page-header">
     <p class="eyebrow">Ideas, experiments, and updates</p>
     <h1>Writing</h1>
-    <p class="page-description">Longer pieces live here. Shorter updates follow below.</p>
+    <p class="page-description">Longer pieces and shorter research updates, collected in one place.</p>
   </header>
 
   {% if site.posts.size > 0 %}
@@ -30,5 +30,5 @@ description: Longer pieces and a chronological record of research updates.
     </section>
   {% endif %}
 
-  {% include notes-list.html heading='Updates' anchor='updates' %}
+  {% include updates-list.html heading='Updates' anchor='updates' %}
 </div>

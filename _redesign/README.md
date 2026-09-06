@@ -1,12 +1,8 @@
-# Isolated redesign prototype
+# Thales Bertaglia
 
-This directory is a self-contained Jekyll prototype. The parent Jekyll site ignores underscore-prefixed directories, so building this project does not add routes to the current website.
+This directory contains the Jekyll source for the public website. It uses the parent repository's BibTeX bibliography, teaching page, and publication previews while keeping the site's layouts, content, and dependencies small.
 
-The prototype reads the parent bibliography, news, teaching page, portrait, and publication previews through relative links. Treat those linked paths as source material and edit the canonical parent files only.
-
-Typography uses the self-hosted, MIT-licensed ET Book webfont. Its license is included at `assets/fonts/ET-BOOK-LICENSE.txt`; the font source is <https://github.com/edwardtufte/et-book>.
-
-## Run locally
+## Local preview
 
 From the repository root:
 
@@ -16,32 +12,39 @@ BUNDLE_GEMFILE=_redesign/Gemfile bundle exec jekyll serve \
   --source _redesign \
   --config _redesign/_config.yml \
   --destination _redesign/_site \
+  --drafts \
   --port 4010
 ```
 
 Open <http://127.0.0.1:4010/>.
 
-## Build
+## Add an update
+
+Copy `_redesign/_templates/update.md` into `_redesign/_updates/`. Name it `YYYY-MM-DD-short-description.md`, replace the example text, and keep `featured: true` when it should be eligible for the homepage.
+
+Updates are short Markdown entries displayed directly in the chronological list. They do not need titles or categories.
+
+## Add a piece of writing
+
+Copy `_redesign/_templates/writing.md` into `_redesign/_drafts/` while working on it. Draft filenames do not need a date. The local preview command above includes drafts.
+
+To publish, move the finished file into `_redesign/_posts/` and name it `YYYY-MM-DD-title.md`. Published pieces receive their own URL, appear on the Writing page, and enter the Atom feed.
+
+## Publications and teaching
+
+Publication metadata comes from `_bibliography/papers.bib`. Teaching content comes from `_pages/teaching.md`. These remain the canonical files for those sections.
+
+## Production build
 
 ```sh
-BUNDLE_GEMFILE=_redesign/Gemfile bundle exec jekyll build \
+JEKYLL_ENV=production BUNDLE_GEMFILE=_redesign/Gemfile bundle exec jekyll build \
   --source _redesign \
   --config _redesign/_config.yml \
-  --destination _redesign/_site
+  --destination _site
+
+_redesign/script/verify _site production
 ```
 
-Use `JEKYLL_ENV=production` only when verifying the production-only Google Analytics include. This prototype has no deployment workflow.
+The GitHub Actions workflow performs the same production build, verifies it, checks internal links, and publishes `_site` to the `gh-pages` branch on pushes to `master` or `main`. Pull requests only build and validate; they do not deploy.
 
-Run the build assertions from the repository root:
-
-```sh
-_redesign/script/verify _redesign/_site
-```
-
-## Writing and updates
-
-The Writing page separates two publishing modes without introducing visible categories. Longer pieces live in `_posts` and receive their own pages. Short updates come from the parent `_news` collection and are rendered inline in one chronological Updates list. An optional `featured` boolean controls homepage eligibility; missing values remain eligible.
-
-One clearly worded failure fixture lives in `_lab_notes`. This collection is also the safe place for prototype-only short updates because the linked parent `_news` files belong to the current website. The included demonstration essay exercises the writing layout and feed. The existing root sample post is intentionally not imported.
-
-`_fixtures/2026-01-01-layout-test.md` remains a non-output collection item for testing unpublished layouts. Remove the demo post and `_lab_notes` collection before migration.
+Google Analytics is included only in production builds.

@@ -1,17 +1,17 @@
-{% assign combined_notes = site.news | concat: site.lab_notes | sort: 'date' | reverse %}
+{% assign updates = site.updates | sort: 'date' | reverse %}
 <section class="home-section updates-section"{% if include.anchor %} id="{{ include.anchor }}"{% endif %} aria-labelledby="updates-title">
   <div class="section-heading">
     <h2 id="updates-title">{{ include.heading | default: 'Updates' }}</h2>
     {% if include.limit %}<a href="{{ '/writing/#updates' | relative_url }}">All updates</a>{% endif %}
   </div>
-  <ol class="notes-list">
+  <ol class="updates-list">
     {% assign shown = 0 %}
-    {% for item in combined_notes %}
+    {% for item in updates %}
       {% if include.limit and item.featured == false %}{% continue %}{% endif %}
       {% if include.limit and shown >= include.limit %}{% break %}{% endif %}
-      <li class="note">
+      <li class="update">
         <time datetime="{{ item.date | date_to_xmlschema }}">{{ item.date | date: '%d %b %Y' }}</time>
-        <div class="note-body">
+        <div class="update-body">
           {{ item.content }}
         </div>
       </li>

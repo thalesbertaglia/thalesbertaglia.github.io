@@ -13,11 +13,7 @@ linkedin_username: thales-bertaglia
 permalink: /writing/:year/:month/:day/:title/
 
 collections:
-  news:
-    output: false
-  lab_notes:
-    output: false
-  fixtures:
+  updates:
     output: false
 
 defaults:
@@ -57,3 +53,4 @@ exclude:
   - Gemfile.lock
   - README.md
   - script
+  - _templates
