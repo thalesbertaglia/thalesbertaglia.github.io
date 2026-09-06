@@ -1,0 +1,380 @@
+@misc{zhang2026lingolinguisticgraphoptimization,
+      title={LinGO: A Linguistic Graph Optimization Framework with LLMs for Interpreting Intents of Online Uncivil Discourse}, 
+      author={Yuan Zhang and Thales Bertaglia},
+      year={2026},
+      eprint={2602.04693},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2602.04693}, 
+      abstract={Detecting uncivil language is crucial for maintaining safe, inclusive, and democratic online spaces. Yet existing classifiers often misinterpret posts containing uncivil cues but expressing civil intents, leading to inflated estimates of harmful incivility online. We introduce LinGO, a linguistic graph optimization framework for large language models (LLMs) that leverages linguistic structures and optimization techniques to classify multi-class intents of incivility that use various direct and indirect expressions. LinGO decomposes language into multi-step linguistic components, identifies targeted steps that cause the most errors, and iteratively optimizes prompt and/or example components for targeted steps. We evaluate it using a dataset collected during the 2022 Brazilian presidential election, encompassing four forms of political incivility: Impoliteness (IMP), Hate Speech and Stereotyping (HSST), Physical Harm and Violent Political Rhetoric (PHAVPR), and Threats to Democratic Institutions and Values (THREAT). Each instance is annotated with six types of civil/uncivil intent. We benchmark LinGO using three cost-efficient LLMs: GPT-5-mini, Gemini 2.5 Flash-Lite, and Claude 3 Haiku, and four optimization techniques: TextGrad, AdalFlow, DSPy, and Retrieval-Augmented Generation (RAG). The results show that, across all models, LinGO consistently improves accuracy and weighted F1 compared with zero-shot, chain-of-thought, direct optimization, and fine-tuning baselines. RAG is the strongest optimization technique and, when paired with Gemini model, achieves the best overall performance. These findings demonstrate that incorporating multi-step linguistic components into LLM instructions and optimize targeted components can help the models explain complex semantic meanings, which can be extended to other complex semantic explanation tasks in the future.},
+      pdf={https://arxiv.org/pdf/2602.04693},
+      bibtex_show={true},
+      preview={lingo.png},
+}
+
+@article{goanta2025great,
+  title={The great data standoff: Researchers vs. platforms under the digital services act},
+  author={Goanta, Catalina and Zannettou, Savvas and Kaushal, Rishabh and van de Kerkhof, Jacob and Bertaglia, Thales and Annabell, Taylor and Gui, Haoyang and Spanakis, Gerasimos and Iamnitchi, Adriana},
+  journal={arXiv preprint arXiv:2505.01122},
+  year={2025},
+  abstract={To facilitate accountability and transparency, the Digital Services Act (DSA) sets up a process through which Very Large Online Platforms (VLOPs) need to grant vetted researchers access to their internal data (Article 40(4)). Operationalising such access is challenging for at least two reasons. First, data access is only available for research on systemic risks affecting European citizens, a concept with high levels of legal uncertainty. Second, data access suffers from an inherent standoff problem. Researchers need to request specific data but are not in a position to know all internal data processed by VLOPs, who, in turn, expect data specificity for potential access. In light of these limitations, data access under the DSA remains a mystery. To contribute to the discussion of how Article 40 can be interpreted and applied, we provide a concrete illustration of what data access can look like in a real-world systemic risk case study. We focus on the 2024 Romanian presidential election interference incident, the first event of its kind to trigger systemic risk investigations by the European Commission. During the elections, one candidate is said to have benefited from TikTok algorithmic amplification through a complex dis- and misinformation campaign. By analysing this incident, we can comprehend election-related systemic risk to explore practical research tasks and compare necessary data with available TikTok data. In particular, we make two contributions: (i) we combine insights from law, computer science and platform governance to shed light on the complexities of studying systemic risks in the context of election interference, focusing on two relevant factors: platform manipulation and hidden advertising; and (ii) we provide practical insights into various categories of available data for the study of TikTok, based on platform documentation, data donations and the Research API.},
+  pdf={https://arxiv.org/pdf/2505.01122},
+  bibtex_show={true},
+  preview={dsa_data_access.png},
+}
+
+@inproceedings{gui2025evaluating,
+  title={Evaluating LLM-Generated Legal Explanations for Regulatory Compliance in Social Media Influencer Marketing},
+  author={Gui, Haoyang and Bertaglia, Thales and Annabell, Taylor and Goanț{\u{a}}, C{\u{a}}t{\u{a}}lina and Dooper, Tjomme and Spanakis, Gerasimos},
+  booktitle={Proceedings of the Natural Legal Language Processing Workshop 2025},
+  pages={157--171},
+  year={2025},
+  pdf={https://aclanthology.org/2025.nllp-1.12/},
+  bibtex_show={true},
+  abstract={The rise of influencer marketing has blurred boundaries between organic content and sponsored content, making the enforcement of legal rules relating to transparency challenging. Effective regulation requires applying legal knowledge with a clear purpose and reason, yet current detection methods of undisclosed sponsored content generally lack legal grounding or operate as opaque “black boxes.” Using 1,143 Instagram posts, we compare gpt-5-nano and gemini-2.5-flash-lite under three prompting strategies with controlled levels of legal knowledge provided. Both models perform strongly in classifying content as sponsored or not (F1 up to 0.93), with Gemini favouring recall (0.93) and GPT favouring precision (0.95), though performance drops by over 10 points on ambiguous cases. We further develop a taxonomy of reasoning errors, showing frequent citation omissions (28.57%), unclear references (20.71%), and hidden ads exhibiting the highest miscue rate (28.57%). While adding regulatory text to the prompt improves explanation quality, it does not consistently improve detection accuracy. The contribution of this paper is threefold. First, it makes a novel addition to regulatory compliance technology by providing a taxonomy of common errors in LLM-generated legal reasoning to evaluate whether automated moderation is not only accurate but also legally robust, thereby advancing the transparent detection of influencer marketing content. Second, it features an original dataset of LLM explanations annotated by two students who were trained in influencer marketing law. Third, it combines quantitative and qualitative evaluation strategies for LLM explanations and critically reflects on how these findings can support advertising regulatory bodies in automating moderation processes on a solid legal foundation.},
+  preview={nllp25.png},
+}
+
+@inproceedings{bauer2025towards,
+  title={Towards Fairness Assessment of Dutch Hate Speech Detection},
+  author={Bauer, Julie and Kaushal, Rishabh and Bertaglia, Thales and Iamnitchi, Adriana},
+  booktitle={Proceedings of the 9th Workshop on Online Abuse and Harms (WOAH 2025)},
+  year={2025},
+  pdf={https://arxiv.org/pdf/2506.12502},
+  preview={woah25.jpeg},
+  bibtex_show={true},
+  abstract={Numerous studies have proposed computational methods to detect hate speech online, yet most focus on the English language and emphasize model development. In this study, we evaluate the counterfactual fairness of hate speech detection models in the Dutch language, specifically examining the performance and fairness of transformer-based models. We make the following key contributions. First, we curate a list of Dutch Social Group Terms that reflect social context. Second, we generate counterfactual data for Dutch hate speech using LLMs and established strategies like Manual Group Substitution (MGS) and Sentence Log-Likelihood (SLL). Through qualitative evaluation, we highlight the challenges of generating realistic counterfactuals, particularly with Dutch grammar and contextual coherence. Third, we fine-tune baseline transformer-based models with counterfactual data and evaluate their performance in detecting hate speech. Fourth, we assess the fairness of these models using Counterfactual Token Fairness (CTF) and group fairness metrics, including equality of odds and demographic parity. Our analysis shows that models perform better in terms of hate speech detection, average counterfactual fairness and group fairness. This work addresses a significant gap in the literature on counterfactual fairness for hate speech detection in Dutch and provides practical insights and recommendations for improving both model performance and fairness.}
+}
+
+@article{tari2025towards,
+author = {Tari, Henry and \v{S}ereiva, Nojus and Kaushal, Rishabh and Bertaglia, Thales and Iamnitchi, Adriana},
+title = {Towards High-Fidelity Synthetic Multi-Platform Social Media Datasets via Large Language Models},
+year = {2026},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+issn = {1559-1131},
+url = {https://doi.org/10.1145/3789496},
+doi = {10.1145/3789496},
+abstract = {Social media datasets are essential for research on a variety of topics, such as disinformation, influence operations, hate speech detection, or influencer marketing practices. However, access to social media datasets is often constrained due to costs and platform restrictions. Acquiring datasets that span multiple platforms, which is crucial for understanding the digital ecosystem, is particularly challenging. This paper explores the potential of large language models to create lexically and semantically relevant social media datasets across multiple platforms, aiming to match the quality of real data. We propose multi-platform topic-based prompting and employ various language models to generate synthetic data from two real datasets, each consisting of posts from three different social media platforms. We assess the lexical and semantic properties of the synthetic data and compare them with those of the real data. Our empirical findings show that using large language models to generate synthetic multi-platform social media data is promising, different language models perform differently in terms of fidelity, and a post-processing approach might be needed for generating high-fidelity synthetic datasets for research. In addition to the empirical evaluation of three state of the art large language models, our contributions include new fidelity metrics specific to multi-platform social media datasets.},
+note = {Just Accepted},
+journal = {ACM Trans. Web},
+month = jan,
+keywords = {Social Media Research, LLMs, Synthetic Data},
+pdf={https://dl.acm.org/doi/abs/10.1145/3789496},
+bibtex_show={true},
+preview={towards_synthetic_data.png},
+}
+
+@inproceedings{annabell2025tiktok,
+  title={TikTok Search Recommendations: Governance and Research Challenges},
+  author={Annabell, Taylor and Gorwa, Robert and Scharlach, Rebecca and van de Kerkhof, Jacob and Bertaglia, Thales},
+  booktitle={Proceedings of the 1st The 1st international Workshop on Computational Approaches to Content Moderation and Platform Governance (COMPASS)},
+  year={2025},
+  pdf={https://workshop-proceedings.icwsm.org/pdf/2025_09.pdf},
+  preview={compass25.png},
+  bibtex_show={true},
+  abstract={Like other social media, TikTok is embracing its use as a search engine, developing search products to steer users to produce searchable content and engage in content discovery. Their recently developed product search recommendations are preformulated search queries recommended to users on videos. However, TikTok provides limited transparency about how search recommendations are generated and moderated, despite requirements under regulatory frameworks like the European Union's Digital Services Act. By suggesting that the platform simply aggregates comments and common searches linked to videos, it sidesteps responsibility and issues that arise from contextually problematic recommendations, reigniting long-standing concerns about platform liability and moderation. This position paper addresses the novelty of search recommendations on TikTok by highlighting the challenges that this feature poses for platform governance and offering a computational research agenda, drawing on preliminary qualitative analysis. It sets out the need for transparency in platform documentation, data access and research to study search recommendations.}
+}
+
+@article{gui2025computational,
+  title={Computational studies in influencer marketing: A systematic literature review},
+  author={Gui, Haoyang and Bertaglia, Thales and Goanta, Catalina and Spanakis, Gerasimos},
+  journal={arXiv preprint arXiv:2506.14602},
+  year={2025},
+  abstract={Influencer marketing has become a crucial feature of digital marketing strategies. Despite its rapid growth and algorithmic relevance, the field of computational studies in influencer marketing remains fragmented, especially with limited systematic reviews covering the computational methodologies employed. This makes overarching scientific measurements in the influencer economy very scarce, to the detriment of interested stakeholders outside of platforms themselves, such as regulators, but also researchers from other fields. This paper aims to provide an overview of the state of the art of computational studies in influencer marketing by conducting a systematic literature review (SLR) based on the PRISMA model. The paper analyses 69 studies to identify key research themes, methodologies, and future directions in this research field. The review identifies four major research themes: Influencer identification and characterisation, Advertising strategies and engagement, Sponsored content analysis and discovery, and Fairness. Methodologically, the studies are categorised into machine learning-based techniques (e.g., classification, clustering) and non-machine-learning-based techniques (e.g., statistical analysis, network analysis). Key findings reveal a strong focus on optimising commercial outcomes, with limited attention to regulatory compliance and ethical considerations. The review highlights the need for more nuanced computational research that incorporates contextual factors such as language, platform, and industry type, as well as improved model explainability and dataset reproducibility. The paper concludes by proposing a multidisciplinary research agenda that emphasises the need for further links to regulation and compliance technology, finer granularity in analysis, and the development of standardised datasets.},
+  pdf={https://arxiv.org/pdf/2506.14602},
+  bibtex_show={true},
+  preview={influencer_marketing_survey.png}
+}
+
+@article{bertaglia2025disclosures,
+title = {Influencer self-disclosure practices on Instagram: A multi-country longitudinal study},
+journal = {Online Social Networks and Media},
+volume = {45},
+pages = {100298},
+year = {2025},
+issn = {2468-6964},
+doi = {https://doi.org/10.1016/j.osnem.2024.100298},
+pdf = {https://www.sciencedirect.com/science/article/pii/S2468696424000235},
+code={https://github.com/thalesbertaglia/instagram-disclosure-trends},
+author = {Thales Bertaglia and Catalina Goanta and Gerasimos Spanakis and Adriana Iamnitchi},
+keywords = {Influencer marketing, Advertising disclosure, Instagram, Self-disclosure practices, Legal compliance},
+abstract = {This paper presents a longitudinal study of more than ten years of activity on Instagram consisting of over a million posts by 400 content creators from four countries: the US, Brazil, Netherlands and Germany. Our study shows differences in the professionalisation of content monetisation between countries, yet consistent patterns; significant differences in the frequency of posts yet similar user engagement trends; and significant differences in the disclosure of sponsored content in some countries, with a direct connection with national legislation. We analyse shifts in marketing strategies due to legislative and platform feature changes, focusing on how content creators adapt disclosure methods to different legal environments. We also analyse the impact of disclosures and sponsored posts on engagement and conclude that, although sponsored posts have lower engagement on average, properly disclosing ads does not reduce engagement further. Our observations stress the importance of disclosure compliance and can guide authorities in developing and monitoring them more effectively.},
+bibtex_show = {true},
+selected={true},
+preview = {osnem_instagram.png}
+}
+
+@phdthesis{phdthesis,
+    title = {Decoding digital influence: Computational insights into monetisation, controversy, and compliance in the creator economy},
+    author = {Thales Bertaglia},
+    year = {2024},
+    doi = {10.26481/dis.20241107tb},
+    pdf = {https://cris.maastrichtuniversity.nl/ws/portalfiles/portal/220872697/c8456.pdf},
+    language = {English},
+    isbn = {9789465102597},
+    publisher = {Maastricht University},
+    address = {Netherlands},
+    school = {Maastricht University},
+    preview = {thesis_cover.png},
+    bibtex_show = {true},
+    abstract = {This thesis investigates the creator economy on social media platforms, focusing on influencers – content creators who use their extensive audience reach and strong follower relationships to monetise content through various models, most notably influencer marketing. The drive for revenue generation through content monetisation often incentivises influencers to prioritise engagement and visibility above transparency, leading to issues related to undisclosed advertisements and online toxicity. This thesis addresses these challenges with an interdisciplinary approach, aiming to develop reliable computational methodologies and data resources for monitoring, analysing, and detecting problematic content while considering the socio-legal implications. Our key contributions include (1) A longitudinal analysis of influencer practices on Instagram from 2010 to 2022 across four countries, revealing trends in posting volumes, ad disclosures, and the impact of regulatory changes on influencer behaviour. (2) A method based on large language models to improve the quality of data resources for sponsored content detection. (3) A methodology for generating and evaluating synthetic social media data for research. (4) A framework and dataset for detecting abusive language inspired by legal definitions. (5) A methodology and dataset for analysing gendered toxicity targeting influencers on YouTube. (6) An in-depth analysis of controversy as a monetisation strategy within the creator economy, investigating its effects on engagement, toxicity, and content moderation strategies employed by creators. This thesis combines insights from law, social sciences, and data science to improve transparency, reduce toxicity, and encourage responsible content creation, contributing to a safer online environment. We emphasise the importance of interdisciplinary research in addressing the challenges within the creator economy, particularly in improving regulatory compliance through computational methods. Our work highlights the importance of transparency, the impact of regulatory clarity on influencer behaviour, and the need for computational approaches that are both transparent and theoretically grounded.}
+}
+
+
+@inproceedings{bertaglia2024toxmon,
+  author = {Bertaglia, Thales and Goanta, Catalina and Iamnitchi, Adriana},
+  title = {The Monetisation of Toxicity: Analysing YouTube Content Creators and Controversy-Driven Engagement},
+  year = {2024},
+  isbn = {9798400710827},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  pdf = {https://doi.org/10.1145/3677117.3685005},
+  doi = {10.1145/3677117.3685005},
+  booktitle = {Proceedings of the 4th International Workshop on Open Challenges in Online Social Networks},
+  pages = {1--9},
+  numpages = {9},
+  keywords = {content creators, content monetization, influencer marketing, influencers, toxicity, youtube},
+  location = {Poznan, Poland},
+  series = {OASIS '24},
+  preview={toxmon.png},
+  bibtex_show={true},
+  code={https://github.com/thalesbertaglia/toxmon},
+  abstract={YouTube is a major social media platform that plays a significant role in digital culture, with content creators at its core. These creators often engage in controversial behaviour to drive engagement, which can foster toxicity. This paper presents a quantitative analysis of controversial content on YouTube, focusing on the relationship between controversy, toxicity, and monetisation. We introduce a curated dataset comprising 20 controversial YouTube channels extracted from Reddit discussions, including 16,349 videos and more than 105 million comments. We identify and categorise monetisation cues from video descriptions into various models, including affiliate marketing and direct selling, using lists of URLs and keywords. Additionally, we train a machine learning model to measure the toxicity of comments in these videos. Our findings reveal that while toxic comments correlate with higher engagement, they negatively impact monetisation, indicating that controversy-driven interaction does not necessarily lead to financial gain. We also observed significant variation in monetisation strategies, with some creators showing extensive monetisation despite high toxicity levels. Our study introduces a curated dataset, lists of URLs and keywords to categorise monetisation, a machine learning model to measure toxicity, and is a significant step towards understanding the complex relationship between controversy, engagement, and monetisation on YouTube. The lists used for detecting and categorising monetisation cues are available on https://github.com/thalesbertaglia/toxmon.}
+}
+
+@inproceedings{bertaglia2024instasynth,
+  title={InstaSynth: Opportunities and Challenges in Generating Synthetic Instagram Data with ChatGPT for Sponsored Content Detection},
+  author={Bertaglia, Thales and Heisig, Lily and Kaushal, Rishabh and Iamnitchi, Adriana},
+  booktitle={Proceedings of the International AAAI Conference on Web and Social Media},
+  volume={18},
+  pages={139--151},
+  pdf={https://ojs.aaai.org/index.php/ICWSM/article/view/31303/33463},
+  preview={instasynth.png},
+  DOI={10.1609/icwsm.v18i1.31303},
+  year={2024},
+  selected={true},
+  bibtex_show={true},
+  code={https://github.com/thalesbertaglia/instasynth},
+  abstract={Large Language Models (LLMs) raise concerns about lowering the cost of generating texts that could be used for unethical or illegal purposes, especially on social media. This paper investigates the promise of such models to help enforce legal requirements related to the disclosure of sponsored content online. We investigate the use of LLMs for generating synthetic Instagram captions with two objectives: The first objective (fidelity) is to produce realistic synthetic datasets. For this, we implement content-level and network-level metrics to assess whether synthetic captions are realistic. The second objective (utility) is to create synthetic data useful for sponsored content detection. For this, we evaluate the effectiveness of the generated synthetic data for training classifiers to identify undisclosed advertisements on Instagram. Our investigations show that the objectives of fidelity and utility may conflict and that prompt engineering is a useful but insufficient strategy. Additionally, we find that while individual synthetic posts may appear realistic, collectively they lack diversity, topic connectivity, and realistic user interaction patterns.}
+}
+
+@inproceedings{gui2024,
+  title={Across Platforms and Languages: Dutch Influencers and Legal Disclosures on Instagram, YouTube and TikTok},
+  author={Gui, Haoyang and Bertaglia, Thales and Goanta, Catalina and de Vries, Sybe and Spanakis, Gerasimos},
+  booktitle={Accepted for publication at the 16th International Conference on Advances in Social Networks Analysis and Mining},
+  pages={1--2},
+  year={2024},
+  preview={dutch_inf_asonam.png},
+  pdf = {https://arxiv.org/pdf/2407.12451},
+  bibtex_show={true},
+  abstract={Content monetization on social media fuels a growing influencer economy. Influencer marketing remains largely undisclosed or inappropriately disclosed on social media. Non-disclosure issues have become a priority for national and supranational authorities worldwide, who are starting to impose increasingly harsher sanctions on them. This paper proposes a transparent methodology for measuring whether and how influencers comply with disclosures based on legal standards. We introduce a novel distinction between disclosures that are legally sufficient (green) and legally insufficient (yellow). We apply this methodology to an original dataset reflecting the content of 150 Dutch influencers publicly registered with the Dutch Media Authority based on recently introduced registration obligations. The dataset consists of 292,315 posts and is multi-language (English and Dutch) and cross-platform (Instagram, YouTube and TikTok). We find that influencer marketing remains generally underdisclosed on social media, and that bigger influencers are not necessarily more compliant with disclosure standards.}
+}
+
+@inproceedings{tari2024,
+  author = {Tari, Henry and Khan, M. Danial and Rutten, Justus and Othman, Darian and Bertaglia, Thales and Kaushal, Rishabh and Iamnitchi, Adriana},
+  title = {Leveraging {GPT} for the Generation of Multi-Platform Social Media Datasets for Research},
+  year = {2024},
+  isbn = {9798400705953},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  pdf = {https://doi.org/10.1145/3648188.3675153},
+  doi = {10.1145/3648188.3675153},
+  booktitle = {Proceedings of the 35th ACM Conference on Hypertext and Social Media},
+  pages = {337--343},
+  numpages = {7},
+  keywords = {LLMs, Social Media Research, Synthetic Data},
+  location = {Poznan, Poland},
+  series = {HT '24},
+  preview={ht2024.png},
+  bibtex_show={true},
+  abstract={Social media datasets are essential for research on disinformation, influence operations, social sensing, hate speech detection, cyberbullying, and other significant topics. However, access to these datasets is often restricted due to costs and platform regulations. As such, acquiring datasets that span multiple platforms which are crucial for a comprehensive understanding of the digital ecosystem is particularly challenging. This paper explores the potential of large language models to create lexically and semantically relevant social media datasets across multiple platforms, aiming to match the quality of real datasets. We employ ChatGPT to generate synthetic data from two real datasets, each consisting of posts from three different social media platforms. We assess the lexical and semantic properties of the synthetic data and compare them with those of the real data. Our empirical findings suggest that using large language models to generate synthetic multi-platform social media data is promising. However, further enhancements are necessary to improve the fidelity of the outputs.}
+}
+
+@book{goanta2024child,
+  author    = {Goanta, Catalina and Camps, Margje and Costa Bertaglia, Thales and Spanakis, Jerry and Iamnitchi, Anda},
+  title     = {Child en family influencers op sociale media in Nederland: Naar een onderzoeksmethode},
+  series    = {Handhaving en Gedrag},
+  publisher = {Boom},
+  address   = {Den Haag},
+  year      = {2024},
+  month     = jan,
+  edition   = {1},
+  pages     = {59},
+  isbn      = {9789047301950},
+  url       = {https://dspace.library.uu.nl/handle/1874/462160},
+  pdf = {https://research-portal.uu.nl/ws/files/251643203/Child-en-family-influencers-rapport.pdf},
+  preview={child_influencers.jpg},
+  bibtex_show={true}
+}
+
+@inproceedings{bertaglia2023sexism,
+author = {Bertaglia, Thales and Bartekova, Katarina and Jongma, Rinske and Mccarthy, Stephen and Iamnitchi, Adriana},
+title = {Sexism in Focus: An Annotated Dataset of YouTube Comments for Gender Bias Research},
+year = {2023},
+isbn = {9798400702259},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+pdf = {https://doi.org/10.1145/3599696.3612900},
+preview={oasis23.png},
+doi = {10.1145/3599696.3612900},
+booktitle = {Proceedings of the 3rd International Workshop on Open Challenges in Online Social Networks},
+pages = {22–28},
+numpages = {7},
+location = {Rome, Italy},
+series = {OASIS '23},
+bibtex_show={true},
+abstract={This paper presents a novel dataset of 200k YouTube comments from 468 videos across 109 channels in four content categories: Entertainment, Gaming, People & Blogs, and Science & Technology. We applied state-of-the-art NLP methods to augment the dataset with sexism-related features such as sentiment, toxicity, offensiveness, and hate speech. These features can assist manual content analyses and enable automated analysis of sexism in online platforms. Furthermore, we develop an annotation framework inspired by the Ambivalent Sexism Theory to promote a nuanced understanding of how comments relate to the gender of content creators. We release a small sample of comments annotated using this framework. Our dataset analysis confirms that female content creators receive more sexist and hateful comments than their male counterparts, underscoring the need for further research and intervention in addressing online sexism.}
+}
+
+@InProceedings{bertaglia2023closing,
+author="Bertaglia, Thales
+and Huber, Stefan
+and Goanta, Catalina
+and Spanakis, Gerasimos
+and Iamnitchi, Adriana",
+editor="Longo, Luca",
+title="Closing the Loop: Testing {ChatGPT} to Generate Model Explanations to Improve Human Labelling of Sponsored Content on Social Media",
+booktitle="Explainable Artificial Intelligence",
+year="2023",
+publisher="Springer Nature Switzerland",
+address="Cham",
+pages="198--213",
+isbn="978-3-031-44067-0",
+pdf = {https://doi.org/10.1007/978-3-031-44067-0_11},
+preview={closing_the_loop.png}, 
+doi = {10.1007/978-3-031-44067-0_11},
+selected={true},
+bibtex_show={true},
+altmetric={true},
+code={https://github.com/thalesbertaglia/chatgpt-explanations-sponsored-content},
+abstract={Regulatory bodies worldwide are intensifying their efforts to ensure transparency in influencer marketing on social media through instruments like the Unfair Commercial Practices Directive (UCPD) in the European Union, or Section 5 of the Federal Trade Commission Act. Yet enforcing these obligations has proven to be highly problematic due to the sheer scale of the influencer market. The task of automatically detecting sponsored content aims to enable the monitoring and enforcement of such regulations at scale. Current research in this field primarily frames this problem as a machine learning task, focusing on developing models that achieve high classification performance in detecting ads. These machine learning tasks rely on human data annotation to provide ground truth information. However, agreement between annotators is often low, leading to inconsistent labels that hinder the reliability of models. To improve annotation accuracy and, thus, the detection of sponsored content, we propose using chatGPT to augment the annotation process with phrases identified as relevant features and brief explanations. Our experiments show that this approach consistently improves inter-annotator agreement and annotation accuracy. Additionally, our survey of user experience in the annotation task indicates that the explanations improve the annotators’ confidence and streamline the process. Our proposed methods can ultimately lead to more transparency and alignment with regulatory requirements in sponsored content detection.}
+}
+
+
+@article{goanta2023digital,
+  title={Digital influencers, monetization models and platforms as transactional spaces},
+  author={Goanta, Catalina and Bertaglia, Thales},
+  journal={Brazilian Creative Industries Journal},
+  volume={3},
+  number={1},
+  pages={242--259},
+  year={2023},
+  pdf = {https://doi.org/10.25112/bcij.v3i1.3328},
+  preview={br_journal.png},
+  bibtex_show={true},
+  abstract={This paper aims to discuss the impact of digital influencers’ content monetization on social media in the context of platform governance. For achieving this objective, it characterizes the Monetization Supply Chain and the different monetization models as ad revenue, on-platform influencer marketing; subscription, tokenization, crowdfunding; direct selling; creator funds; besides the traditional influencer marketing. It also presents preliminary analyses of a dataset of posts by 400 influencers from four countries: Brazil, Germany, the Netherlands and the United States of America to understand how content creators from different countries are framing sponsored content.}
+}
+
+@inproceedings{goanta2022case,
+  title={The case for a legal compliance API for the enforcement of the EU’s digital services act on social media platforms},
+  author={Goanta, Catalina and Bertaglia, Thales and Iamnitchi, Adriana},
+  booktitle={Proceedings of the 2022 ACM Conference on Fairness, Accountability, and Transparency},
+  pages={1341--1349},
+  year={2022},
+  pdf = {https://doi.org/10.1145/3531146.3533190},
+  preview={facct2022.png},
+  bibtex_show={true},
+  abstract={In the course of under a year, the European Commission has launched some of the most important regulatory proposals to date on platform governance. The Commission’s goals behind cross-sectoral regulation of this sort include the protection of markets and democracies alike. While all these acts propose sophisticated rules for setting up new enforcement institutions and procedures, one aspect remains highly unclear: how digital enforcement will actually take place in practice. Focusing on the Digital Services Act (DSA), this discussion paper critically addresses issues around social media data access for the purpose of digital enforcement and proposes the use of a legal compliance application programming interface (API) as a means to facilitate compliance with the DSA and complementary European and national regulation. To contextualize this discussion, the paper pursues two scenarios that exemplify the harms arising out of content monetization affecting a particularly vulnerable category of social media users: children. The two scenarios are used to further reflect upon essential issues surrounding data access and legal compliance with the DSA and further applicable legal standards in the field of labour and consumer law.}
+}
+
+
+@inproceedings{bertaglia2021abusive,
+  title={Abusive language on social media through the legal looking glass},
+  author={Bertaglia, Thales and Grigoriu, Andreea and Dumontier, Michel and van Dijck, Gijs},
+  booktitle={Proceedings of the 5th Workshop on Online Abuse and Harms (WOAH 2021)},
+  pages={191--200},
+  year={2021},
+  pdf = {https://aclanthology.org/2021.woah-1.20/},
+  preview={alyt.png}, 
+  selected={true},
+  bibtex_show={true},
+  altmetric={true},
+  code={https://github.com/thalesbertaglia/ALYT},
+  abstract={Abusive language is a growing phenomenon on social media platforms. Its effects can reach beyond the online context, contributing to mental or emotional stress on users. Automatic tools for detecting abuse can alleviate the issue. In practice, developing automated methods to detect abusive language relies on good quality data. However, there is currently a lack of standards for creating datasets in the field. These standards include definitions of what is considered abusive language, annotation guidelines and reporting on the process. This paper introduces an annotation framework inspired by legal concepts to define abusive language in the context of online harassment. The framework uses a 7-point Likert scale for labelling instead of class labels. We also present ALYT – a dataset of Abusive Language on YouTube. ALYT includes YouTube comments in English extracted from videos on different controversial topics and labelled by Law students. The comments were sampled from the actual collected data, without artificial methods for increasing the abusive content. The paper describes the annotation process thoroughly, including all its guidelines and training steps.}
+}
+
+@article{bertaglia2021clout,
+  title={Clout Chasing for the Sake of Content Monetization: Gaming Algorithmic Architectures with Self-Moderation Strategies},
+  author={Bertaglia, Thales and Dubois, Adrien and Goanta, Catalina},
+  journal={Morals \& Machines},
+  volume={1},
+  number={1},
+  pages={22--29},
+  year={2021},
+  publisher={Nomos Verlagsgesellschaft mbH \& Co. KG},
+  pdf = {https://www.nomos-elibrary.de/10.5771/2747-5174-2021-1-22/},
+  preview={mm.png},
+  bibtex_show={true},
+  altmetric={true},
+  abstract={This short discussion paper addresses how controversy is monetized online by reflecting on a new iteration of the shock value in media production, identified on social media as the ‘clout chasing’ phenomenon. We first exemplify controversial behavior, and subsequently proceed to defining clout chasing, which we discuss this concept in relation to existing frameworks for the understanding of controversy on social media. We then outline what clout chasing entails as a content monetization strategy, and address the risks associated with this approach. In doing so, we introduce the concept of ‘content self-moderation’, which encompasses how creators use content moderation as a way to hedge monetization risks arising out of their reliance on controversy for economic growth. This concept is discussed in the context of the automated content governance entailed by algorithmic platform architectures, to contribute to existing scholarship on platform governance.}
+}
+
+@article{surubaru2020european,
+  title={European integration after Maastricht: Insights, novel research agendas, and the challenge of Real-World Impact},
+  author={Surubaru, Neculai-Cristian and Di Fazio, Caterina and Urlings, Miriam and Goanta, Catalina and Bertaglia, Thales Costa and Segers, Mathieu},
+  journal={EuropeNow Journal},
+  volume={37},
+  pages={1--14},
+  year={2020},
+  pdf="https://www.europenowjournal.org/2020/11/09/european-integration-after-maastricht-insights-novel-research-agendas-and-the-challenge-of-real-world-impact/",
+  preview={maastricht.jpg},
+  bibtex_show={true},
+  altmetric={true},
+}
+
+@phdthesis{bertaglia2017normalizaccao,
+  title={Normaliza{\c{c}}{\~a}o textual de conte{\'u}do gerado por usu{\'a}rio},
+  author={Bertaglia, Thales},
+  year={2017},
+  school={Universidade de S{\~a}o Paulo},
+  pdf="https://www.teses.usp.br/teses/disponiveis/55/55134/tde-10112017-170919/publico/ThalesFelipeCostaBertaglia_revisada.pdf",
+  preview={diss_usp.png},
+  bibtex_show={true},
+}
+
+@INPROCEEDINGS{edilson2017pelesent,
+  author={Corrêa, Edilson Anselmo and Marinho, Vanessa Queiroz and dos Santos, Leandro Borges and Bertaglia, Thales and Treviso, Marcos Vinícius and Brum, Henrico Bertini},
+  booktitle={2017 Brazilian Conference on Intelligent Systems (BRACIS)}, 
+  title={PELESent: Cross-Domain Polarity Classification Using Distant Supervision}, 
+  year={2017},
+  volume={},
+  number={},
+  pages={49-54},
+  keywords={Sentiment analysis;Twitter;Learning systems;Manuals;Polarity Classification;Sentiment Analysis;Distant Supervision;Twitter},
+  pdf = "https://ieeexplore.ieee.org/abstract/document/8247028",
+  doi={10.1109/BRACIS.2017.45},
+  bibtex_show={true},
+  preview={pelesent.png},
+  abstract={The enormous amount of texts published daily by Internet users has fostered the development of methods to analyze this content in several natural language processing areas, such as sentiment analysis. The main goal of this task is to classify the polarity of a message. Even though many approaches have been proposed for sentiment analysis, some of the most successful ones rely on the availability of large annotated corpus, which is an expensive and time-consuming process. In recent years, distant supervision has been used to obtain larger datasets. So, inspired by these techniques, in this paper we extend such approaches to incorporate popular graphic symbols used in electronic messages, the emojis, in order to create a large sentiment corpus for Portuguese. Trained on almost one million tweets, several models were tested in both same domain and cross-domain corpora. Our methods obtained very competitive results in five annotated corpora from mixed domains (Twitter and product reviews), which proves the domain-independent property of such approach. In addition, our results suggest that the combination of emoticons and emojis is able to properly capture the sentiment of a message.}
+  }
+
+@inproceedings{bertaglia2016exploring,
+    title = "Exploring Word Embeddings for Unsupervised Textual User-Generated Content Normalization",
+    author = "Bertaglia, Thales and
+      Volpe Nunes, Maria das Gra{\c{c}}as",
+    booktitle = "Proceedings of the 2nd Workshop on Noisy User-generated Text ({WNUT})",
+    month = dec,
+    year = "2016",
+    address = "Osaka, Japan",
+    publisher = "The COLING 2016 Organizing Committee",
+    pdf = {https://aclanthology.org/W16-3916},
+    preview={wnut.png},
+    pages = "112--120",
+    bibtex_show={true},
+    code={https://github.com/thalesbertaglia/enelvo},
+    abstract={Text normalization techniques based on rules, lexicons or supervised training requiring large corpora are not scalable nor domain interchangeable, and this makes them unsuitable for normalizing user-generated content (UGC). Current tools available for Brazilian Portuguese make use of such techniques. In this work we propose a technique based on distributed representation of words (or word embeddings). It generates continuous numeric vectors of high-dimensionality to represent words. The vectors explicitly encode many linguistic regularities and patterns, as well as syntactic and semantic word relationships. Words that share semantic similarity are represented by similar vectors. Based on these features, we present a totally unsupervised, expandable and language and domain independent method for learning normalization lexicons from word embeddings. Our approach obtains high correction rate of orthographic errors and internet slang in product reviews, outperforming the current available tools for Brazilian Portuguese.}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

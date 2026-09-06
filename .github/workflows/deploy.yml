@@ -18,7 +18,7 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     env:
-      BUNDLE_GEMFILE: ${{ github.workspace }}/_redesign/Gemfile
+      BUNDLE_GEMFILE: ${{ github.workspace }}/Gemfile
       JEKYLL_ENV: production
     steps:
       - uses: actions/checkout@v7
@@ -27,9 +27,9 @@ jobs:
           ruby-version: "3.3.4"
           bundler-cache: true
       - name: Build
-        run: bundle exec jekyll build --source _redesign --config _redesign/_config.yml --destination _site
+        run: bundle exec jekyll build --destination _site
       - name: Verify
-        run: _redesign/script/verify _site production
+        run: script/verify _site production
       - name: Check internal links
         uses: lycheeverse/lychee-action@v2.9.0
         with:
