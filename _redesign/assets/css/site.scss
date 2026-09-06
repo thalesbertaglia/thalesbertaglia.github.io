@@ -102,7 +102,7 @@ h1 { max-width: 700px; margin: 0; font-size: clamp(3rem, 6vw, 4.65rem); font-wei
 .portrait { position: relative; width: 258px; margin: 0 auto; transform: rotate(1.7deg); }
 .tape { position: absolute; z-index: 2; top: -16px; left: 82px; width: 88px; height: 31px; background: rgba(241, 221, 160, .82); transform: rotate(-5deg); }
 .portrait-frame { padding: 11px 11px 22px; background: #fffdf9; border: 1.5px solid var(--ink); box-shadow: 7px 7px 0 var(--pink-soft); clip-path: polygon(.6% 1%, 99.2% 0, 98.8% 99%, 1.3% 98.2%); }
-.portrait img { display: block; width: 100%; aspect-ratio: 1 / 1.08; object-fit: cover; object-position: 50% 22%; filter: saturate(.86) contrast(.96); }
+.portrait-frame img { display: block; width: 100%; aspect-ratio: 1 / 1.08; object-fit: cover; object-position: 50% 22%; filter: saturate(.86) contrast(.96); }
 .handmark { position: absolute; right: -25px; bottom: 1px; width: 35px; height: 35px; transform: rotate(-8deg); }
 
 .home-section { margin-top: clamp(78px, 10vw, 118px); }
