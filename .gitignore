@@ -5,6 +5,7 @@ _site/
 .sass-cache/
 .bundle/
 vendor/
+_archive/previous-site/
 design-mockup*.html
 /gh-pages
 /gh-pages.pub
