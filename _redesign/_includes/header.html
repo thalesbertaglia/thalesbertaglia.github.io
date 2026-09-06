@@ -1,0 +1,13 @@
+<header class="site-header">
+  <div class="shell header-inner">
+    <a class="site-name" href="{{ '/' | relative_url }}">Thales Bertaglia</a>
+    <nav aria-label="Primary navigation">
+      <a href="{{ '/research/' | relative_url }}"{% if page.url == '/research/' %} aria-current="page"{% endif %}>Research</a>
+      <a href="{{ '/publications/' | relative_url }}"{% if page.url == '/publications/' %} aria-current="page"{% endif %}>Publications</a>
+      <a href="{{ '/notes/' | relative_url }}"{% if page.url == '/notes/' or page.collection == 'posts' %} aria-current="page"{% endif %}>Notes</a>
+      <a href="{{ '/teaching/' | relative_url }}"{% if page.url == '/teaching/' %} aria-current="page"{% endif %}>Teaching</a>
+      <a href="{{ '/cv/' | relative_url }}"{% if page.url == '/cv/' %} aria-current="page"{% endif %}>CV</a>
+    </nav>
+  </div>
+</header>
+

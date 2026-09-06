@@ -1,0 +1,54 @@
+title: Thales Bertaglia
+email: contact@thalesbertaglia.com
+description: Postdoctoral researcher studying the creator economy, social media platforms, algorithmic systems, and platform governance.
+url: https://thalesbertaglia.com
+baseurl: ""
+lang: en
+timezone: Europe/Amsterdam
+
+google_analytics: G-6BNSQF7PZW
+
+permalink: /notes/:year/:month/:day/:title/
+
+collections:
+  news:
+    output: false
+  fixtures:
+    output: false
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: page
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+plugins:
+  - jekyll-feed
+  - jekyll-scholar
+  - jekyll-sitemap
+
+scholar:
+  last_name: [Bertaglia]
+  first_name: [Thales]
+  style: apa
+  locale: en
+  source: ../_bibliography
+  bibliography: papers.bib
+  bibliography_template: bibliography
+  bibtex_filters: [latex, smallcaps, superscript]
+  replace_strings: true
+  join_strings: true
+  query: "@*"
+  group_by: year
+  group_order: descending
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - script

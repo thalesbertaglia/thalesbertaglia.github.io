@@ -1,0 +1,29 @@
+{% assign combined_notes = site.news | concat: site.posts | sort: 'date' | reverse %}
+<section class="home-section notes-section" aria-labelledby="notes-title">
+  <div class="section-heading">
+    <h2 id="notes-title">{{ include.heading | default: 'Notes & outcomes' }}</h2>
+    {% if include.limit %}<a href="{{ '/notes/' | relative_url }}">All notes</a>{% endif %}
+  </div>
+  <ol class="notes-list">
+    {% assign shown = 0 %}
+    {% for item in combined_notes %}
+      {% if include.limit and item.featured == false %}{% continue %}{% endif %}
+      {% if include.limit and shown >= include.limit %}{% break %}{% endif %}
+      {% assign note_kind = item.kind | default: 'update' %}
+      <li class="note note-{{ note_kind }}">
+        <time datetime="{{ item.date | date_to_xmlschema }}">{{ item.date | date: '%d %b %Y' }}</time>
+        <div class="note-body">
+          {% if note_kind == 'rejection' or note_kind == 'revision' %}<span class="outcome-mark" aria-hidden="true">{% if note_kind == 'rejection' %}×{% else %}↻{% endif %}</span>{% endif %}
+          {% if item.collection == 'posts' %}
+            <h3><a href="{{ item.url | relative_url }}">{{ item.title }}</a></h3>
+            {% if item.description %}<p>{{ item.description }}</p>{% endif %}
+          {% else %}
+            {{ item.content }}
+          {% endif %}
+        </div>
+      </li>
+      {% assign shown = shown | plus: 1 %}
+    {% endfor %}
+  </ol>
+</section>
+

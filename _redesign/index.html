@@ -1,0 +1,60 @@
+---
+layout: default
+page_class: home
+description: Thales Bertaglia is a postdoctoral researcher at Utrecht University working on the creator economy, social media platforms, and platform governance.
+---
+<div class="shell home-shell">
+  <section class="hero" aria-labelledby="home-title">
+    <div class="hero-copy">
+      <p class="eyebrow">Postdoctoral researcher · Utrecht University</p>
+      <h1 id="home-title">Thales Bertaglia</h1>
+      <p class="hero-lede">I study the creator economy and social media platforms, focusing on how content monetisation, algorithmic systems, and platform regulation interact.</p>
+      <p>I am a postdoctoral researcher at the Faculty of Law, Economics, and Governance at Utrecht University. I currently work on the ERC Starting Grant <a href="https://humanads.eu" rel="noopener noreferrer">HUMANads</a>, which examines content monetisation and private-law fairness in platform governance.</p>
+    </div>
+
+    <figure class="portrait">
+      <span class="tape" aria-hidden="true"></span>
+      <div class="portrait-frame">
+        <img src="{{ '/assets/img/prof_pic.jpg' | relative_url }}" alt="Thales Bertaglia smiling outdoors" width="4364" height="5120">
+      </div>
+      <figcaption>Thales, photographed outdoors.</figcaption>
+      <span class="handmark" aria-hidden="true">✳</span>
+    </figure>
+  </section>
+
+  <section class="home-section" aria-labelledby="themes-title">
+    <div class="section-heading">
+      <h2 id="themes-title">Research</h2>
+      <a href="{{ '/research/' | relative_url }}">All research</a>
+    </div>
+    <div class="theme-grid">
+      {% for theme in site.data.research %}
+        <article class="theme">
+          <span class="theme-number" aria-hidden="true">0{{ forloop.index }}</span>
+          <h3>{{ theme.title }}</h3>
+          <p>{{ theme.description }}</p>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="home-section" aria-labelledby="selected-title">
+    <div class="section-heading">
+      <h2 id="selected-title">Selected publications</h2>
+      <a href="{{ '/publications/' | relative_url }}">All publications</a>
+    </div>
+    <div class="publications publications-selected">
+      {% bibliography --group_by none --query @*[selected=true]* %}
+    </div>
+  </section>
+
+  {% include notes-list.html limit=4 heading='Recent notes & outcomes' %}
+
+  <section class="contact-strip" aria-labelledby="contact-title">
+    <div>
+      <p class="eyebrow">Contact</p>
+      <h2 id="contact-title">Get in touch</h2>
+    </div>
+    <p>Email me at <a href="mailto:{{ site.email }}">{{ site.email }}</a> or find my work through the profile links below.</p>
+  </section>
+</div>
