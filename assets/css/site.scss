@@ -145,9 +145,10 @@ h2.bibliography { margin: 54px 0 8px; padding-bottom: 8px; border-bottom: 1px so
 .update { display: grid; grid-template-columns: 112px 1fr; gap: 28px; padding: 20px 0; border-bottom: 1px solid var(--line); }
 .update time { padding-top: 5px; color: var(--muted); font-variant-numeric: tabular-nums; }
 .update time::after { content: ""; display: block; width: 38px; height: 3px; margin-top: 5px; background: var(--pink-soft); transform: rotate(-2deg); }
-.update-rejection time { color: var(--pink); white-space: nowrap; }
-.update-rejection time::after { background: var(--pink); }
-.update-mark { display: inline-block; margin-right: 2px; color: var(--pink); font: 700 .9em/.8 var(--serif); transform: rotate(-13deg) translateY(-1px); }
+.update-rejection time { color: #c2185b; font-weight: 700; white-space: nowrap; }
+.update-rejection time::after { background: #c2185b; }
+.update-rejection .update-body::before { content: "rejected"; display: block; margin-bottom: 4px; color: #c2185b; font: 600 .58rem/1.2 var(--sans); letter-spacing: .08em; text-transform: uppercase; transform: rotate(-1deg); }
+.update-mark { display: inline-block; margin-right: 2px; color: #c2185b; font: 700 .9em/.8 var(--serif); transform: rotate(-13deg) translateY(-1px); }
 .update-body { position: relative; max-width: 70ch; }
 .update-body > :first-child { margin-top: 0; }
 .update-body > :last-child { margin-bottom: 0; }
