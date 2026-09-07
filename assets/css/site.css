@@ -574,6 +574,14 @@ h2.bibliography {
   background: var(--pink);
 }
 
+.update-mark {
+  display: inline-block;
+  margin-right: 5px;
+  color: var(--pink);
+  font: 700 1.2em/0.8 var(--serif);
+  transform: rotate(-13deg);
+}
+
 .update-body {
   position: relative;
   max-width: 70ch;
