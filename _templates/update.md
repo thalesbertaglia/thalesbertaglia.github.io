@@ -1,5 +1,6 @@
 ---
 date: YYYY-MM-DD
+kind: update
 featured: true
 ---
 

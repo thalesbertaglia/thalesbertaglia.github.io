@@ -145,6 +145,8 @@ h2.bibliography { margin: 54px 0 8px; padding-bottom: 8px; border-bottom: 1px so
 .update { display: grid; grid-template-columns: 112px 1fr; gap: 28px; padding: 20px 0; border-bottom: 1px solid var(--line); }
 .update time { padding-top: 5px; color: var(--muted); font-variant-numeric: tabular-nums; }
 .update time::after { content: ""; display: block; width: 38px; height: 3px; margin-top: 5px; background: var(--pink-soft); transform: rotate(-2deg); }
+.update-rejection time { color: var(--pink); }
+.update-rejection time::after { background: var(--pink); }
 .update-body { position: relative; max-width: 70ch; }
 .update-body > :first-child { margin-top: 0; }
 .update-body > :last-child { margin-bottom: 0; }
