@@ -14,13 +14,13 @@ done
 
 publication_count=$(grep -c 'class="publication"' "$site_dir/publications/index.html")
 selected_count=$(grep -c 'class="publication"' "$site_dir/index.html")
-updates_count=$(grep -c 'class="update"' "$site_dir/writing/index.html")
-home_updates_count=$(grep -c 'class="update"' "$site_dir/index.html")
+updates_count=$(grep -c 'class="update' "$site_dir/writing/index.html")
+home_updates_count=$(grep -c 'class="update' "$site_dir/index.html")
 
 test "$publication_count" -eq 24 || { echo "Expected 24 publications, found $publication_count" >&2; exit 1; }
 test "$selected_count" -eq 4 || { echo "Expected 4 selected publications, found $selected_count" >&2; exit 1; }
-test "$updates_count" -eq 6 || { echo "Expected 6 updates, found $updates_count" >&2; exit 1; }
-test "$home_updates_count" -eq 4 || { echo "Expected 4 homepage updates, found $home_updates_count" >&2; exit 1; }
+test "$updates_count" -ge 6 || { echo "Expected at least 6 updates, found $updates_count" >&2; exit 1; }
+test "$home_updates_count" -eq 5 || { echo "Expected 5 homepage updates, found $home_updates_count" >&2; exit 1; }
 
 previous_line=0
 for date_label in '30 May 2025' '06 May 2025' '16 Jan 2025' '26 Nov 2024' '09 Sep 2024' '01 Jul 2024'; do

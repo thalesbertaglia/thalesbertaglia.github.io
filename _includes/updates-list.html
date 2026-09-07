@@ -7,7 +7,6 @@
   <ol class="updates-list">
     {% assign shown = 0 %}
     {% for item in updates %}
-      {% if include.limit and item.featured == false %}{% continue %}{% endif %}
       {% if include.limit and shown >= include.limit %}{% break %}{% endif %}
       <li class="update{% if item.kind == 'rejection' %} update-rejection{% endif %}">
         <time datetime="{{ item.date | date_to_xmlschema }}">{{ item.date | date: '%d %b %Y' }}</time>
