@@ -1,4 +1,5 @@
 {% assign updates = site.updates | sort: 'date' | reverse %}
+{% assign update_limit = include.limit | plus: 0 %}
 <section class="home-section updates-section"{% if include.anchor %} id="{{ include.anchor }}"{% endif %} aria-labelledby="updates-title">
   <div class="section-heading">
     <h2 id="updates-title">{{ include.heading | default: 'Updates' }}</h2>
@@ -7,7 +8,7 @@
   <ol class="updates-list">
     {% assign shown = 0 %}
     {% for item in updates %}
-      {% if include.limit and shown >= include.limit %}{% break %}{% endif %}
+      {% if include.limit and shown >= update_limit %}{% break %}{% endif %}
       <li class="update{% if item.kind == 'rejection' %} update-rejection{% endif %}">
         <time datetime="{{ item.date | date_to_xmlschema }}">{{ item.date | date: '%d %b %Y' }}</time>
         <div class="update-body">
