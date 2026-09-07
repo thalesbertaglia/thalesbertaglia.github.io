@@ -567,19 +567,32 @@ h2.bibliography {
 }
 
 .update-rejection time {
-  color: var(--pink);
+  color: #c2185b;
+  font-weight: 700;
+  white-space: nowrap;
 }
 
 .update-rejection time::after {
-  background: var(--pink);
+  background: #c2185b;
+}
+
+.update-rejection .update-body::before {
+  content: "rejected";
+  display: block;
+  margin-bottom: 4px;
+  color: #c2185b;
+  font: 600 0.58rem/1.2 var(--sans);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transform: rotate(-1deg);
 }
 
 .update-mark {
   display: inline-block;
-  margin-right: 5px;
-  color: var(--pink);
-  font: 700 1.2em/0.8 var(--serif);
-  transform: rotate(-13deg);
+  margin-right: 2px;
+  color: #c2185b;
+  font: 700 0.9em/0.8 var(--serif);
+  transform: rotate(-13deg) translateY(-1px);
 }
 
 .update-body {
