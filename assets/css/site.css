@@ -566,6 +566,14 @@ h2.bibliography {
   transform: rotate(-2deg);
 }
 
+.update-rejection time {
+  color: var(--pink);
+}
+
+.update-rejection time::after {
+  background: var(--pink);
+}
+
 .update-body {
   position: relative;
   max-width: 70ch;
