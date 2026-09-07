@@ -6,6 +6,12 @@ description:
 nav: true
 nav_order: 6
 ---
+# 2026
+
+**The (im)possibilities of GenAI for the Law**<br>
+Faculty of Law, Economics and Governance<br>
+Utrecht University<br>
+<br>
 
 # 2025
 
