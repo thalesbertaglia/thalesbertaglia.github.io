@@ -3,14 +3,14 @@ layout: default
 title: Writing
 permalink: /writing/
 page_class: writing
-description: Things I've published, presented, made, or been thinking about.
+description: Longer essays, reflections, and pieces of writing.
 ---
 
 <div class="shell page-shell">
   <header class="page-header">
-    <p class="eyebrow">Ideas, experiments, and updates</p>
+    <p class="eyebrow">Essays and reflections</p>
     <h1>Writing</h1>
-    <p class="page-description">Things I've published, presented, made, or been thinking about.</p>
+    <p class="page-description">Longer essays, reflections, and pieces of writing.</p>
   </header>
 
   {% if site.posts.size > 0 %}
@@ -30,5 +30,4 @@ description: Things I've published, presented, made, or been thinking about.
     </section>
   {% endif %}
 
-  {% include updates-list.html heading='Updates' anchor='updates' %}
 </div>

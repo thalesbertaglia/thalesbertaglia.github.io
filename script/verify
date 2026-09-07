@@ -4,17 +4,17 @@ set -eu
 site_dir="${1:-_site}"
 environment="${2:-development}"
 
-for route in index.html research/index.html publications/index.html writing/index.html teaching/index.html feed.xml sitemap.xml robots.txt CNAME; do
+for route in index.html research/index.html publications/index.html news/index.html writing/index.html teaching/index.html feed.xml sitemap.xml robots.txt CNAME; do
   test -f "$site_dir/$route" || { echo "Missing $route" >&2; exit 1; }
 done
 
-for retired_route in blog code cv news notes people projects repositories sample-posts design-mockup design-mockup-v2 design-mockup-v3 _archive; do
+for retired_route in blog code cv notes people projects repositories sample-posts design-mockup design-mockup-v2 design-mockup-v3 _archive; do
   test ! -e "$site_dir/$retired_route" || { echo "Retired route generated: $retired_route" >&2; exit 1; }
 done
 
 publication_count=$(grep -c 'class="publication"' "$site_dir/publications/index.html")
 selected_count=$(grep -c 'class="publication"' "$site_dir/index.html")
-updates_count=$(grep -E -c 'class="update( |")' "$site_dir/writing/index.html")
+updates_count=$(grep -E -c 'class="update( |")' "$site_dir/news/index.html")
 home_updates_count=$(grep -E -c 'class="update( |")' "$site_dir/index.html")
 
 test "$publication_count" -eq 24 || { echo "Expected 24 publications, found $publication_count" >&2; exit 1; }
@@ -24,7 +24,7 @@ test "$home_updates_count" -eq 5 || { echo "Expected 5 homepage updates, found $
 
 previous_line=0
 for date_label in '30 May 2025' '06 May 2025' '16 Jan 2025' '26 Nov 2024' '09 Sep 2024' '01 Jul 2024'; do
-  current_line=$(grep -n "$date_label" "$site_dir/writing/index.html" | head -n 1 | cut -d: -f1)
+  current_line=$(grep -n "$date_label" "$site_dir/news/index.html" | head -n 1 | cut -d: -f1)
   test "$current_line" -gt "$previous_line" || { echo "Updates are not reverse chronological" >&2; exit 1; }
   previous_line="$current_line"
 done

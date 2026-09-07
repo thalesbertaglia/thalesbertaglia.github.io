@@ -5,6 +5,7 @@
       <a class="home-nav" href="{{ '/' | relative_url }}" aria-label="Home"{% if page.url == '/' %} aria-current="page"{% endif %}><span class="home-icon" aria-hidden="true"></span></a>
       <a href="{{ '/research/' | relative_url }}"{% if page.url == '/research/' %} aria-current="page"{% endif %}>Research</a>
       <a href="{{ '/publications/' | relative_url }}"{% if page.url == '/publications/' %} aria-current="page"{% endif %}>Publications</a>
+      <a href="{{ '/news/' | relative_url }}"{% if page.url == '/news/' %} aria-current="page"{% endif %}>News</a>
       <a href="{{ '/writing/' | relative_url }}"{% if page.url == '/writing/' or page.collection == 'posts' %} aria-current="page"{% endif %}>Writing</a>
       <a href="{{ '/teaching/' | relative_url }}"{% if page.url == '/teaching/' %} aria-current="page"{% endif %}>Teaching</a>
     </nav>
