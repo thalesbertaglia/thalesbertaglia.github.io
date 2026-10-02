@@ -4,11 +4,11 @@ set -eu
 site_dir="${1:-_site}"
 environment="${2:-development}"
 
-for route in index.html research/index.html publications/index.html news/index.html writing/index.html teaching/index.html feed.xml sitemap.xml robots.txt CNAME; do
+for route in index.html research/index.html making/index.html publications/index.html news/index.html writing/index.html teaching/index.html feed.xml sitemap.xml robots.txt CNAME; do
   test -f "$site_dir/$route" || { echo "Missing $route" >&2; exit 1; }
 done
 
-for retired_route in blog code cv notes people projects repositories sample-posts design-mockup design-mockup-v2 design-mockup-v3 _archive; do
+for retired_route in blog built code cv notes people projects repositories sample-posts design-mockup design-mockup-v2 design-mockup-v3 _archive; do
   test ! -e "$site_dir/$retired_route" || { echo "Retired route generated: $retired_route" >&2; exit 1; }
 done
 
@@ -31,6 +31,8 @@ done
 
 grep -q 'thalesbertaglia.com' "$site_dir/CNAME" || { echo "CNAME is incorrect" >&2; exit 1; }
 grep -q 'https://www.last.fm/user/thalesbertaglia' "$site_dir/index.html" || { echo "Last.fm profile link missing" >&2; exit 1; }
+grep -q 'href="/making/"' "$site_dir/index.html" || { echo "Making navigation link missing" >&2; exit 1; }
+grep -Fq "<title>Things I've made · Thales Bertaglia</title>" "$site_dir/making/index.html" || { echo "Making page metadata missing" >&2; exit 1; }
 
 if grep -R -E -i -q 'prototype|placeholder|layout fixture|sample-posts|projects/1_project' "$site_dir"; then
   echo "Development-only content leaked into the public build" >&2
